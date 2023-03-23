@@ -1,0 +1,20 @@
+.nav {
+  line-height: 6vh;
+  background-color: black;
+}
+.navheader img {
+  padding-top: 3px;
+  padding-right: 2px;
+  width: 40px;
+  float: left;
+}
+.link {
+  padding-left: 115vh;
+}
+.link a {
+  text-decoration: none;
+  padding-left: 6vh;
+}
+.logo{
+  margin-left: 40px;
+}
