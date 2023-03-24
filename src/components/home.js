@@ -1,10 +1,8 @@
 import React from 'react'
-import { Container,Row,Col } from 'react-bootstrap'
+import {Row,Col } from 'react-bootstrap'
 import Con1 from './con1';
 import Con2 from './homecard';
 import './styles/con4.css'
-import Image from "react-bootstrap/Image";
-import sago from "../components/newsag.jpg"
 import Con3 from './Con3';
 import Con4 from './Con4';
 import Footer from './footer';

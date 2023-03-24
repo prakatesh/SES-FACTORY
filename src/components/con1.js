@@ -14,7 +14,6 @@ function Con1() {
       </Carousel.Item>
       <Carousel.Item>
       <Image className="d-block w-100" src={sag2}/>
-
         <Carousel.Caption>
           <h3>Sago Seeds</h3>
           <p>A type of starch that's commonly extracted from a palm called Metroxylon sagu.</p>

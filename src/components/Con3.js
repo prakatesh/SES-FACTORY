@@ -1,5 +1,4 @@
 import Card from 'react-bootstrap/Card';
-import {FaUser} from 'react-icons/fa'
 import {Row,Col} from 'react-bootstrap'
 import './styles/con3.css'
 import im1 from './ceo.gif'

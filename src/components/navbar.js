@@ -52,7 +52,7 @@ function Navb() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="success">Search</Button>
+            <Button variant="success" >Search</Button>
           </Form>
           </Nav>
         </Navbar.Collapse>

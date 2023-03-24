@@ -53,7 +53,7 @@ export default function Contact() {
           </div>
           </Container>
         </Col>
-        <Col md={6}>
+        <Col md={6}  >
           <div className={style.card2} data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" >
             <form>
               <label>Your Name</label><br/>
@@ -75,7 +75,7 @@ export default function Contact() {
               <label>City </label><br/>
               <input type="text" placeholder='City '/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea type="textarea" placeholder='Your Requirement' rows="5" cols="55"/><br/>
+              <textarea type="textarea" placeholder='Your Requirement' rows="5" cols="45"/><br/>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>
