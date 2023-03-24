@@ -8,10 +8,10 @@ function ProductList({data}) {
       {data.map((data,index)=>
       {
         return(
-          <div key={index}>
+          <div key={index} >
             {data.k==="0"?
             <Container>
-            <div className={style.section}>
+            <div className={style.section} data-aos="flip-right" data-aos-duration="2000">
               <Row>
                 <Col md={5}>
                   <img src={data.pic} alt="f" />
@@ -31,7 +31,7 @@ function ProductList({data}) {
           </Container>
           :
           <Container>
-          <div className={style.section}>
+          <div className={style.section} data-aos="flip-left" data-aos-duration="2000">
             <Row>
               <Col md={7}>
                 <div className={style.textsection}>
