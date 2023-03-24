@@ -1,0 +1,56 @@
+.About{
+    margin-top: 5vh;
+    background-color: rgb(175, 199, 190);
+}
+.p1 p{
+    font-size:105%;
+}
+.p1{
+    background-color: rgb(175, 199, 190);
+    padding: 3vh;
+}
+.p1 h4{
+    font-weight: bold;
+}
+.side1 a{
+    font-weight: bolder;
+    font-size: 4vh;
+    color:rgb(230, 72, 72);
+}
+.side2 a{
+    padding: 1vh;
+    display: grid;
+    padding-left: 7%;
+    font-size: large;
+    color: rgb(16, 15, 17);
+}
+.contactus a{
+    font-weight: bolder;
+    font-size: 4vh;
+    color:rgb(230, 72, 72);
+}
+.stylecontactus{
+    padding-left: 7%;
+}
+.stylecontactus span:hover{
+    cursor: pointer;
+    color:rgb(230, 72, 72);
+}
+.stylecontactus span{
+    font-size: large;
+}
+table, td, th {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    border: 2px solid black;
+}
+table {
+    width: 80%;
+    text-align: center;
+}
+.table
+{
+    padding: 5vh;
+}
