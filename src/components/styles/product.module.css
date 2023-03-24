@@ -1,0 +1,89 @@
+.header
+{
+    font-size:10vh;
+    text-align: center;
+    padding-top: 1vh;
+}
+.section
+{
+    margin-top: 7vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5vh;
+}
+.textsection
+{
+    line-height: 6vh;
+    background-color: black;
+}
+.textsection h2
+{
+    padding-left: 5vh;
+    color: white;
+    padding-top:10vh;
+}
+.textsection p{
+    padding-left: 5vh;
+    color: white;
+    font-size: larger;
+    padding-top:3vh;
+}
+.button{
+    margin-left: 30vh;
+    padding-bottom: 2vh;
+}
+button{
+    border: 0.5rem;
+}
+.glow
+{
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow:before {
+    content: '';
+    background: linear-gradient(45deg,#ff0000,#ff7300,#fffb00,#48ff00,#00ffd5,#002bff,#7a00ff,#ff00c8,#ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow:active{
+    color: #000
+}
+.glow:active:after {
+    background: transparent;
+}
+.glow:hover:before {
+    opacity:5;
+}
+.glow:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #432727;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
