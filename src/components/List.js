@@ -1,6 +1,6 @@
-import starch from './assets/Starch.jpg'
-import sago from './assets/sagof.jpg'
-import wasteTapioca  from './assets/wasteTapioca.jpg'
+import starch from '../assets/Images/Products/Starch.jpg'
+import sago from '../assets/Images/Products/sago.jpg'
+import wasteTapioca  from '../assets/Images/Products/wasteTapioca.jpg'
 const List=[
     {
         k:"0",
