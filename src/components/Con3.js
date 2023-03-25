@@ -1,10 +1,10 @@
 import Card from 'react-bootstrap/Card';
 import {Row,Col} from 'react-bootstrap'
 import './styles/con3.css'
-import im1 from './ceo.gif'
-import im2 from './business.jpeg'
-import im3 from './employees.jpeg'
-import im4 from './pan.jpeg'
+import im1 from '../assets/Images/Home/ceo.gif'
+import im2 from '../assets/Images/Home/pan.jpeg'
+import im3 from '../assets/Images/Home/employees.jpeg'
+import im4 from '../assets/Images/Home/pan.jpeg';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBuilding } from '@fortawesome/free-solid-svg-icons';
 library.add(faBuilding);

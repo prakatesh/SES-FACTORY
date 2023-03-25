@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Image from "react-bootstrap/Image";
-import sag2 from "../components/sag2.jpg"
-import sago from "../components/newsag.jpg"
+import sag2 from "../assets/Images/Home/sag2.jpg"
+import sago from "../assets/Images/Home/newsag.jpg"
 function Con1() {
   return (
     <Carousel fade>
