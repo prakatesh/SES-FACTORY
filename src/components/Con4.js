@@ -3,7 +3,7 @@ import {Row,Col} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import sag2 from "../assets/Images/Home/sag2.jpg"
 import newsag from "../assets/Images/Home/newsag.jpg"
-import './styles/con4.css'
+import '../assets/Styles/Home/con4.css'
 export default function Con4() {
   return (
     <div>

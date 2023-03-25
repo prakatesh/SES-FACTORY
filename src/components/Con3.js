@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import {Row,Col} from 'react-bootstrap'
-import './styles/con3.css'
+import '../assets/Styles/Home/con3.css'
 import im1 from '../assets/Images/Home/ceo.gif'
 import im2 from '../assets/Images/Home/pan.jpeg'
 import im3 from '../assets/Images/Home/employees.jpeg'

@@ -2,7 +2,7 @@ import React from 'react'
 import {Row,Col } from 'react-bootstrap'
 import Con1 from './con1';
 import Con2 from './homecard';
-import './styles/con4.css'
+import '../assets/Styles/Home/con3.css'
 import Con3 from './Con3';
 import Con4 from './Con4';
 import Footer from './footer';

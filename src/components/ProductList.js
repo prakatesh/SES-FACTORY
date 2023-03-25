@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import style from './styles/product.module.css'
+import style from '../assets/Styles/Product/product.module.css'
 function ProductList({data}) {
   return (
     <div>

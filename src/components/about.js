@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './styles/about.module.css'
+import style from '../assets/Styles/About/about.module.css'
 import { Container,NavLink,Row,Col} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 export default function About() {
