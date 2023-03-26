@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import {Form,Button} from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../assets/Styles/Navbar/navbar.css'
+import '../../assets/Styles/Navbar/navbar.css'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {LinkContainer} from 'react-router-bootstrap'
 function Navb() {

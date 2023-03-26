@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row,Col,Container} from 'react-bootstrap'
-import style from '../assets/Styles/Contact/contact.module.css'
+import style from '../../assets/Styles/Contact/contact.module.css'
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RememberMeIcon from '@mui/icons-material/RememberMe';
