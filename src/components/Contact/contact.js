@@ -75,7 +75,7 @@ export default function Contact() {
               <label>City </label><br/>
               <input type="text" placeholder='City '/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea type="textarea" placeholder='Your Requirement' rows="5" cols="45"/><br/>
+              <textarea type="textarea" placeholder='Your Requirement' rows="4" cols="55"/><br/>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>
