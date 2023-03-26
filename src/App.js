@@ -15,9 +15,7 @@ export default function App() {
     <Route path="about" element={<About/>}></Route>
     <Route path="contact" element={<Contact/>}></Route>
     <Route path="flipbook" element={<Flipbook/>}></Route>
-    <Route path="product1" element={<Products/>}></Route>
-    <Route path="product2" element={<Products/>}></Route>
-    <Route path="product3" element={<Products/>}></Route>
+    <Route path="product" element={<Products/>}></Route>
     </Routes>
     </div>
   )

@@ -3,7 +3,6 @@ import {Form,Button} from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import style from'../../assets/Styles/Navbar/navbar.module.css'
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import {LinkContainer} from 'react-router-bootstrap'
 function Navb() {
   const instyle=({isActive})=>{
@@ -26,17 +25,9 @@ function Navb() {
             <LinkContainer to="about">
             <Nav.Link href="About">About us</Nav.Link>
             </LinkContainer>
-            <NavDropdown title="Products" id="collasible-nav-dropdown">
-            <LinkContainer to="product1">
-              <NavDropdown.Item href="Product1">Product 1</NavDropdown.Item>
+            <LinkContainer to="product">
+              <Nav.Link href="Product">Product </Nav.Link>
             </LinkContainer>
-            <LinkContainer to="product2">
-            <NavDropdown.Item href="Product2">Product 2</NavDropdown.Item>
-          </LinkContainer>
-          <LinkContainer to="product3">
-          <NavDropdown.Item href="Product3">Product 3</NavDropdown.Item>
-        </LinkContainer>
-            </NavDropdown>
             <LinkContainer to="flipbook">
             <Nav.Link href="Flipbook">Flipbook</Nav.Link>
             </LinkContainer>
