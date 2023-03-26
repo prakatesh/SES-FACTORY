@@ -3,13 +3,11 @@ import {Row,Col} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import sag2 from "../../assets/Images/Home/sag2.jpg"
 import newsag from "../../assets/Images/Home/newsag.jpg"
-import '../../assets/Styles/Home/con4.css'
 export default function Con4() {
   return (
     <div>
     <br/>
     <Row>
-
     <Col md={3}>
     </Col>
     <Col md={4}>
@@ -25,11 +23,8 @@ export default function Con4() {
     </Col>
     <Col md={2}>
     </Col>
-
     </Row>
-
     <Row>
-
     <Col md={3}>
     </Col>
     <Col md={4}>
@@ -44,8 +39,7 @@ export default function Con4() {
     <p><b>Color: </b>White</p><br></br>
     </Col>
     <Col md={2}>
-    </Col>
-
+    </Col>=
     </Row>
     </div>
     

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
-import Video from '../../assets/Viideo/video'
+import Video from '../../assets/Video/video'
 export default function Con2() {
   return (
     <Row className='con2'>

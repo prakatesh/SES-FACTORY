@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import {Form,Button} from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../../assets/Styles/Navbar/navbar.css'
+import style from'../../assets/Styles/Navbar/navbar.module.css'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {LinkContainer} from 'react-router-bootstrap'
 function Navb() {
@@ -14,9 +14,9 @@ function Navb() {
     )
   }
   return (
-    <Navbar collapseOnSelect expand="lg" className="navb" variant="light">
+    <Navbar collapseOnSelect expand="lg" className={style.navb} variant="light">
       <Container>
-        <Navbar.Brand className="title" href="#home"><b>Elumalaiyan Sago Factory</b></Navbar.Brand>
+        <Navbar.Brand className={style.title} href="#home"><b>Elumalaiyan Sago Factory</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

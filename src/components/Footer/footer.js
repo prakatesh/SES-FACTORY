@@ -1,9 +1,9 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
-import '../../assets/Styles/Home/con4.css'
+import style from '../../assets/Styles/Home/con4.module.css'
 export default function Footer() {
   return (
-   <div className='f'>  
+   <div className={style.f}>  
    <br></br>  
    <Row>
     <Col md={2}>
