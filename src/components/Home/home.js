@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Row,Col } from 'react-bootstrap'
 import Con1 from './con1';
 import Con2 from '../Home/homecard';
@@ -7,9 +7,29 @@ import Con3 from '../Home/Con3';
 import Con4 from '../Home/Con4';
 import Footer from '../Footer/footer';
 import Navb from '../Navbar/navbar';
+import SyncLoader from "react-spinners/SyncLoader";
 export default function Home() {
+  const[Loading,setLoading]=useState(false)
+  useEffect(()=>
+  {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },3000);
+  },[])
   return (
-    <div className='main-content'>
+    <div>
+          {
+      Loading?
+      <SyncLoader style={{textAlign:"center",justifyContent:"center",display:"flex",alignItems:"center",paddingTop:"40vh"}}
+        color={"rgb(118, 15, 215)"}
+        loading={Loading}
+        size={30}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      :
+      <div className='main-content'>
     <Navb/> 
     <Row>
     <Col>
@@ -38,6 +58,8 @@ export default function Home() {
     <Footer/>
     </Row>
 
+    </div>
+    }
     </div>
   )
 }
