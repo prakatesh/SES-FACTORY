@@ -6,10 +6,12 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RememberMeIcon from '@mui/icons-material/RememberMe';
 import EmailIcon from '@mui/icons-material/Email';
 import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
+import Navb from '../Navbar/navbar'
 import { NavLink } from 'react-router-dom';
 export default function Contact() {
   return (
     <div >
+      <Navb/>
     <Container>
     <div className={style.Contact}>
       <Row>

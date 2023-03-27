@@ -6,9 +6,11 @@ import style from '../../assets/Styles/Home/con3.module.css'
 import Con3 from '../Home/Con3';
 import Con4 from '../Home/Con4';
 import Footer from '../Footer/footer';
+import Navb from '../Navbar/navbar';
 export default function Home() {
   return (
     <div className='main-content'>
+    <Navb/> 
     <Row>
     <Col>
     <Con1/>

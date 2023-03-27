@@ -1,7 +1,10 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
+import Navb from '../Navbar/navbar'
 export default function Flipbook() {
   return (
+    <div>
+      <Navb/>
     <Row>
     <Col md={2}>
     </Col>
@@ -11,5 +14,6 @@ export default function Flipbook() {
     <Col md={2}>
     </Col>
     </Row>
+    </div>
   )
 }

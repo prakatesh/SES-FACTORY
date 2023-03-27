@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import {Form,Button} from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import style from'../../assets/Styles/Navbar/navbar.module.css'
@@ -19,32 +18,24 @@ function Navb() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <LinkContainer to="/">
-            <Nav.Link style={instyle} href="Home">Home</Nav.Link>
+            <LinkContainer  to="/home">
+            <Nav.Link  style={instyle} href="/home">Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="about">
-            <Nav.Link href="About">About us</Nav.Link>
+            <LinkContainer to="/about">
+            <Nav.Link  to="/about">About us</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="product">
-              <Nav.Link href="Product">Product </Nav.Link>
+            <LinkContainer to="/product">
+              <Nav.Link to="/product">Product</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="flipbook">
-            <Nav.Link href="Flipbook">Flipbook</Nav.Link>
+            <LinkContainer to="/flipbook">
+            <Nav.Link to="/flipbook">Flipbook</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="contact">
-            <Nav.Link eventKey={2} href="Contact"> Contact us</Nav.Link>
+            <LinkContainer to="/contact">
+            <Nav.Link eventKey={2} to="/contact">Contact us</Nav.Link>
             </LinkContainer>
           </Nav>
           <Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="success" >Search</Button>
-          </Form>
+          
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -2,9 +2,11 @@ import React from 'react'
 import style from '../../assets/Styles/About/about.module.css'
 import { Container,NavLink,Row,Col} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import Navb from '../Navbar/navbar'
 export default function About() {
   return (
     <div>
+      <Navb/>
     <div>
     <Container className={style.About}>
     <Row data-aos="fade-up" data-aos-duration="3000">
