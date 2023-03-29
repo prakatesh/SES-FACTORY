@@ -1,41 +1,34 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import style from'../../assets/Styles/Navbar/navbar.module.css'
-import {LinkContainer} from 'react-router-bootstrap'
 function Navb() {
-  const instyle=({isActive})=>{
-    return(
-      {
-        fontSize:isActive?"100px":"10px"
-      }
-    )
-  }
   return (
-    <Navbar collapseOnSelect expand="lg" className={style.navb} variant="light">
-      <Container>
-        <Navbar.Brand className={style.title} href="#home"><b>Elumalaiyan Sago Factory</b></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <LinkContainer  to="/home">
-            <Nav.Link  style={instyle} href="/home">Home</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/about">
-            <Nav.Link  to="/about">About us</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/product">
-              <Nav.Link to="/product">Product</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/flipbook">
-            <Nav.Link to="/flipbook">Flipbook</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/contact">
-            <Nav.Link eventKey={2} to="/contact">Contact us</Nav.Link>
-            </LinkContainer>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">SES</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            
           </Nav>
-          <Nav>
-          
+          <Nav className="d-flex">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            
+            <Nav.Link href="/"><span style={{color:"green"}}><i className="fa-solid fa-home" /></span>Home</Nav.Link>
+            <Nav.Link href="/about"><span><i className="fa-solid fa-user" /></span>About</Nav.Link>
+            <Nav.Link href="/flipbook"><span><i className="fa-solid fa-book" /></span>Flipbook</Nav.Link>
+            <Nav.Link href="/product"><span><i className="fa-solid fa-box-open" /></span>Product</Nav.Link>
+            <Nav.Link href="/contact"><span><i className="fa-solid fa-phone-volume"/></span>Contact us</Nav.Link>
+            <Nav.Link href="/contact"><span><i className="fa-solid fa-lock" /></span>Admin</Nav.Link>
+          </Nav>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div>
     <Routes>
-    <Route path="home" element={<Home/>}></Route>
+    <Route path="/" element={<Home/>}></Route>
     <Route path="about" element={<About/>}></Route>
     <Route path="contact" element={<Contact/>}></Route>
     <Route path="flipbook" element={<Flipbook/>}></Route>
