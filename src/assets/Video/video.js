@@ -8,7 +8,7 @@ function Video() {
       <ReactPlayer
         url='https://www.youtube.com/watch?v=xNXIWzwfKtY'
         width='80%'
-        height='30vh'
+        height='40vh'
       />
     </Container>
   );

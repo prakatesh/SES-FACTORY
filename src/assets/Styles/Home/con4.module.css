@@ -13,3 +13,16 @@
 .f{
     background-color:rgb(221, 217, 217);    
 }
+.con4 img{
+    text-align: center;
+    margin-top: 2rem;
+    height: 75%;
+}
+.con4 h3{
+    text-align: center;
+    font-weight: 700;
+    padding-top: 1rem;
+}
+.con4 p{
+    font-weight: bolder;
+}

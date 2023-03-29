@@ -43,14 +43,14 @@ export default function Home() {
     </Row>
 
     <Row className={style.c3}>
-    <br/><h1 className='text-center'><br/>Glimpse of Our Company</h1>
+    <br/><h1 style={{fontWeight:"bolder"}} className='text-center'><br/>Glimpse of Our Company</h1>
     <Col>
     <br/><Con3/>
     <br/>
     </Col>
     </Row>
     <Row className={style.c4}>
-    <h1 className='text-center'><br/>Latest Products</h1>
+    <h1 className='text-center'><br/><b>Latest Products</b></h1>
     <Con4/>
     </Row>
 
