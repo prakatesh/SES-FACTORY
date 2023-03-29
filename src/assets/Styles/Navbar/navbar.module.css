@@ -1,0 +1,16 @@
+.links a{
+    text-decoration: none;
+    color: white;
+    padding-left: 6vh;
+    font-weight: bolder;
+}
+.links{
+    padding-right: 10rem;
+}
+.navbar{
+    background-color:rgb(41, 39, 39);
+    border: 1px solid black;
+}
+.links i{
+    color: white;
+}
