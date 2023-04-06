@@ -38,7 +38,7 @@ export default function Footer() {
     <NavLink to='/product'> Tapioca Starch</NavLink>
     </Col>
 
-    <Col md={2}>
+    <Col md={1}>
     </Col>
 
     </Row>
