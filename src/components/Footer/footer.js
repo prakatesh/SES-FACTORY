@@ -22,12 +22,11 @@ export default function Footer() {
     </Col>
     <Col md={2}>
     <h3>General Links</h3>
-    <NavLink>Home</NavLink>
-    <NavLink>Products</NavLink>
-    <NavLink>Contact Us</NavLink>
-    <NavLink>About Us</NavLink>
-    <NavLink>Testimonilas</NavLink>
-    <NavLink>Site Map</NavLink>
+    <NavLink to='/'>Home</NavLink>
+    <NavLink to='/product'>Products</NavLink>
+    <NavLink to='contact'>Contact Us</NavLink>
+    <NavLink to='/about'>About Us</NavLink>
+    <NavLink to='/flipbook'>Flipbook</NavLink>
     </Col>
 
     <Col md={1}>
@@ -35,8 +34,8 @@ export default function Footer() {
 
     <Col md={3}>
     <h3>Products</h3>
-    <NavLink>Sago Seeds</NavLink>
-    <NavLink>Tapioca Starch</NavLink>
+    <NavLink to='/product'>Sago Seeds</NavLink>
+    <NavLink to='/product'> Tapioca Starch</NavLink>
     </Col>
 
     <Col md={2}>

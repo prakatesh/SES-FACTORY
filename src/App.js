@@ -10,10 +10,10 @@ export default function App() {
     <div>
     <Routes>
     <Route path="/" element={<Home/>}></Route>
-    <Route path="about" element={<About/>}></Route>
-    <Route path="contact" element={<Contact/>}></Route>
-    <Route path="flipbook" element={<Flipbook/>}></Route>
-    <Route path="product" element={<Products/>}></Route>
+    <Route path="/about" element={<About/>}></Route>
+    <Route path="/contact" element={<Contact/>}></Route>
+    <Route path="/flipbook" element={<Flipbook/>}></Route>
+    <Route path="/product" element={<Products/>}></Route>
     </Routes>
     </div>
   )
