@@ -9,29 +9,30 @@ import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
 import Navb from '../Navbar/navbar'
 import Footer from '../Footer/footer'
 import { NavLink } from 'react-router-dom';
+import info from '../../assets/Images/Contact/back.jpg'
+import mail from '../../assets/Images/Contact/mail.jpg'
 export default function Contact() {
   return (
-    <div >
+    <div className={style.b} >
       <Navb/>
-    <Container>
     <div className={style.Contact}>
+    <Container>
       <Row>
         <Col md={6}>
-        <Container>
-          <div   className={style.card1} data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" >
+          <div   className={style.card1} data-aos-duration="1500" >
             <h2>SRI ELUMALAIYAN SAGO FACTORY</h2>
             <hr/>
             <div className={style.info}>
               <div className={style.info1} >
                 <ContactPhoneIcon style={{fontSize:"7vh"}}/>
                 <h5>Contact Person</h5>
-                <p >Mr. M. Ganesan</p>
+                <p >Mr. R Balakrishnan</p>
               </div>
               <hr/>
               <div className={style.info1} >
                 <LocationOnIcon style={{fontSize:"7vh"}}/>
                 <h5>Address</h5>
-                <p >New Bharathavel Sago Factory Sitheri Po, Attur, </p><p>Salem, Tamil Nadu, India - 636101</p>
+                <p >Sri Elumalaiyan Sago Factory, Attur, </p><p>Salem, Tamil Nadu, India - 636101</p>
               </div>
               <hr/>
               <div className={style.info1} >
@@ -54,10 +55,20 @@ export default function Contact() {
               <hr/>
             </div>
           </div>
-          </Container>
         </Col>
-        <Col md={6}  >
-          <div className={style.card2} data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" >
+        <Col md={6}>
+          <img src={info} alt="" />
+        </Col>
+      </Row>
+      </Container>
+      <hr/>
+      <Container>
+      <Row>
+      <Col md={6}>
+          <img src={mail} alt="n" />
+        </Col>
+        <Col md={6} >
+          <div className={style.card2} data-aos-duration="1500" >
             <form>
               <label>Your Name</label><br/>
               <input type="text" placeholder='Your Name'/><br/>
@@ -78,15 +89,15 @@ export default function Contact() {
               <label>City </label><br/>
               <input type="text" placeholder='City '/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea type="textarea" placeholder='Your Requirement' rows="5" cols="45"/><br/>
+              <textarea type="textarea" placeholder='Your Requirement' rows="4" cols="45"/><br/>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>
           </div>
         </Col>
       </Row>
+      </Container>
       </div>
-    </Container>
     <Footer/>
   </div>
   )

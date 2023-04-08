@@ -7,6 +7,7 @@
 }
 .card2
 {
+    margin-bottom: 2vh;
     line-height: 4vh;
     border-radius: 5%;
     margin-top: 5vh;
@@ -95,3 +96,9 @@ form select{
     opacity: 1;
     right: 0;
   }
+.Contact img{
+    width: 100%;
+    margin-top: 200px;
+    border-radius: 0.5rem;
+    height: 70vh;
+}
