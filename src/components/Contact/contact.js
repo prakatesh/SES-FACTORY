@@ -17,8 +17,8 @@ export default function Contact() {
       <Navb/>
     <div className={style.Contact}>
     <Container>
-      <Row>
-        <Col md={6}>
+      <Row >
+        <Col data-aos="fade-right" data-aos-duration="1500" md={6}>
           <div   className={style.card1} data-aos-duration="1500" >
             <h2>SRI ELUMALAIYAN SAGO FACTORY</h2>
             <hr/>
@@ -56,7 +56,7 @@ export default function Contact() {
             </div>
           </div>
         </Col>
-        <Col md={6}>
+        <Col data-aos="fade-left" data-aos-duration="1500" md={6}>
           <img src={info} alt="" />
         </Col>
       </Row>
@@ -64,11 +64,11 @@ export default function Contact() {
       <hr/>
       <Container>
       <Row>
-      <Col md={6}>
+      <Col data-aos="fade-right" data-aos-duration="1500" md={6}>
           <img src={mail} alt="n" />
         </Col>
-        <Col md={6} >
-          <div className={style.card2} data-aos-duration="1500" >
+        <Col data-aos="fade-left"data-aos-duration="1500" md={6} >
+          <div className={style.card2}  >
             <form>
               <label>Your Name</label><br/>
               <input type="text" placeholder='Your Name'/><br/>
