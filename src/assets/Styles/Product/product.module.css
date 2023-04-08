@@ -1,9 +1,28 @@
 .header
 {
-    font-size:10vh;
-    text-align: center;
+    font-size:7vh;
     padding-top: 1vh;
+    padding-left: 10rem;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #7e7b16 100%
+  );
+  background-clip: border-box;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
 }
+@keyframes textclip{
+    to {
+      background-position: 20% center;
+    }
+  }
 .section
 {
     margin-top: 7vh;

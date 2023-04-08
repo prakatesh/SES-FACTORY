@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import style from '../../assets/Styles/Product/product.module.css'
 function ProductList({data}) {
   return (
-    <div>
+    <div style={{backgroundColor:"rgb(253, 186, 127)"}}>
       <div className={style.header}>Our Product List</div>
       {data.map((data,index)=>
       {
@@ -11,7 +11,7 @@ function ProductList({data}) {
           <div key={index} >
             {data.k==="0"?
             <Container>
-            <div className={style.section} data-aos="flip-right" data-aos-duration="2000">
+            <div className={style.section} style={{backgroundColor:"white"}} data-aos="flip-right" data-aos-duration="2000">
               <Row>
                 <Col md={5}>
                   <img src={data.pic} alt="f" />
@@ -31,7 +31,7 @@ function ProductList({data}) {
           </Container>
           :
           <Container>
-          <div className={style.section} data-aos="flip-left" data-aos-duration="2000">
+          <div className={style.section} style={{backgroundColor:"white"}} data-aos="flip-left" data-aos-duration="2000">
             <Row>
               <Col md={7}>
                 <div className={style.textsection}>

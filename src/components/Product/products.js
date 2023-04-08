@@ -6,7 +6,7 @@ function Product() {
   return (
     <div>
       <Navb/>
-      <ProductList data={List} />
+      <ProductList  data={List} />
     </div>
   )
 }
