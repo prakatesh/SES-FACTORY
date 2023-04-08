@@ -14,7 +14,7 @@ function Con3() {
     <Col md={2}>
     </Col>
     <Col md={2}>
-    <Card  className={style.c2} style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"}}>
+    <Card data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className={style.c2} style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"}}>
     <Card.Img className={style.c1} variant="top" src={im1}/>
     <hr></hr>
       <Card.Body>
@@ -27,7 +27,7 @@ function Con3() {
     </Col>
 
     <Col md={2}>
-    <Card className={style.c2} style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"}}>
+    <Card data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className={style.c2} style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"}}>
     <Card.Img className={style.c1} variant="top" src={im2}/>
     <hr></hr>
       <Card.Body>
@@ -40,7 +40,7 @@ function Con3() {
     </Col>
 
     <Col md={2}>
-    <Card className={style.c2}  style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" }}>
+    <Card data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className={style.c2}  style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" }}>
     <Card.Img className={style.c1} variant="top" src={im3}/>
     <hr></hr>
       <Card.Body>
@@ -53,7 +53,7 @@ function Con3() {
     </Col>
 
     <Col md={2}>
-    <Card className={style.c2}  style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" }}>
+    <Card data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" className={style.c2}  style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" }}>
     <Card.Img className={style.c1} variant="top" src={im4}/>
     <hr></hr>
       <Card.Body>

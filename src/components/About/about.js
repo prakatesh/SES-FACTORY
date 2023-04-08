@@ -9,8 +9,8 @@ export default function About() {
     <div>
       <Navb/>
     <div>
-    <Container className={style.About}>
-    <Row data-aos="fade-up" data-aos-duration="3000">
+    <Container className={style.About} data-aos="fade-up" data-aos-duration="2000">
+    <Row>
       <Col md={9}>
         <div className={style.p1}>
           <p>Located in Thalaivasal TK (Tamil Nadu), Sri Elumalaiyan Sago Factory is a trusted entity in the industry instrumental in manufacturing and supplying premium quality sago seeds, tapioca starch, etc. The offered range of products is completely free from any additives and other harmful preservatives making you assured that it is full of essential nutrients & flavor and rich in taste. We procure our products from reputed and reliable vendors in the market. All the products offered by us are hygienically processed using modern technology and hi-tech machines retaining their freshness, quality, and nutritional values. The company’s objective is to establish itself in all major markets across India and develop as a reputed manufacturer and supplier of authentic food products in the nation.</p>
