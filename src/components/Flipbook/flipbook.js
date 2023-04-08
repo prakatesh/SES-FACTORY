@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row,Col} from 'react-bootstrap'
 import Navb from '../Navbar/navbar'
+import Footer from '../Footer/footer'
 export default function Flipbook() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Flipbook() {
     <Col md={2}>
     </Col>
     </Row>
+    <Footer/>
     </div>
   )
 }

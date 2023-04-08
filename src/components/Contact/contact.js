@@ -7,6 +7,7 @@ import RememberMeIcon from '@mui/icons-material/RememberMe';
 import EmailIcon from '@mui/icons-material/Email';
 import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
 import Navb from '../Navbar/navbar'
+import Footer from '../Footer/footer'
 import { NavLink } from 'react-router-dom';
 export default function Contact() {
   return (
@@ -17,7 +18,7 @@ export default function Contact() {
       <Row>
         <Col md={6}>
         <Container>
-          <div className={style.card1} data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" >
+          <div   className={style.card1} data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500" >
             <h2>SRI ELUMALAIYAN SAGO FACTORY</h2>
             <hr/>
             <div className={style.info}>
@@ -77,7 +78,7 @@ export default function Contact() {
               <label>City </label><br/>
               <input type="text" placeholder='City '/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea type="textarea" placeholder='Your Requirement' rows="4" cols="55"/><br/>
+              <textarea type="textarea" placeholder='Your Requirement' rows="5" cols="45"/><br/>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>
@@ -86,6 +87,7 @@ export default function Contact() {
       </Row>
       </div>
     </Container>
+    <Footer/>
   </div>
   )
 }
