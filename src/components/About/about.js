@@ -3,6 +3,7 @@ import style from '../../assets/Styles/About/about.module.css'
 import { Container,NavLink,Row,Col} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import Navb from '../Navbar/navbar'
+import Footer from '../Footer/footer'
 export default function About() {
   return (
     <div>
@@ -90,6 +91,7 @@ export default function About() {
           </table>
         </div>
       </Container>
+      <Footer/>
     </div>
   )
 }

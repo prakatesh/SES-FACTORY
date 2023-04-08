@@ -1,22 +1,21 @@
 .About{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 5vh;
-    background-color: rgb(175, 199, 190);
+    background-color:rgb(253, 186, 127);
 }
 .p1 p{
     font-size:105%;
 }
 .p1{
-    background-color: rgb(175, 199, 190);
     padding: 3vh;
 }
 .p1 h4{
-    font-weight: bold;
+    font-weight:700;
 }
 .side1 a{
     font-weight: bolder;
     font-size: 4vh;
-    color:rgb(230, 72, 72);
+    color:rgb(65, 69, 145);
 }
 .side2 a{
     padding: 1vh;
@@ -28,7 +27,7 @@
 .contactus a{
     font-weight: bolder;
     font-size: 4vh;
-    color:rgb(230, 72, 72);
+    color:rgb(65, 69, 145);
 }
 .stylecontactus{
     padding-left: 7%;
@@ -39,6 +38,9 @@
 }
 .stylecontactus span{
     font-size: large;
+}
+.stylecontactus h4{
+    color: blueviolet;
 }
 table, td, th {
     padding-top: 2vh;
@@ -63,4 +65,5 @@ table {
 }
 h5{
     padding-top: 2vh;
+    animation: mymove 5s infinite;
 }

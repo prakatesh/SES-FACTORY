@@ -33,7 +33,7 @@ function Con3() {
       <Card.Body>
         <Card.Subtitle className="mb-2 text-muted">Nature of Business</Card.Subtitle>
         <Card.Text>
-        <b>Manufacturer & Supplier</b>
+        <b>Manufacturer</b>
         </Card.Text>
       </Card.Body>
     </Card>
