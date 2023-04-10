@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import style from '../../assets/Styles/Product/product.module.css'
+import { NavLink } from 'react-router-dom';
 function ProductList({data}) {
   return (
     <div style={{backgroundColor:"rgb(253, 186, 127)"}}>
@@ -22,7 +23,7 @@ function ProductList({data}) {
                     <p>{data.p1}</p>
                     <p>{data.p2}</p>
                     <div className={style.button}>
-                      <button class={style.glow}>Request Quote</button>
+                      <button  className={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to='/sagoseed'>Request Quote</NavLink></button>
                     </div>
                   </div>
                 </Col>
@@ -39,7 +40,7 @@ function ProductList({data}) {
                   <p>{data.p1}</p>
                   <p>{data.p2}</p>
                   <div className={style.button}>
-                    <button class={style.glow}>Request Quote</button>
+                    <button class={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to='/sagoseed'>Request Quote</NavLink></button>
                   </div>
                 </div>
               </Col>
