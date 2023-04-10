@@ -10,12 +10,12 @@ export default function App() {
   return (
     <div>
     <Routes>
-    <Route path="/h" element={<Home/>}></Route>
+    <Route path="/" element={<Home/>}></Route>
     <Route path="/about" element={<About/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
     <Route path="/flipbook" element={<Flipbook/>}></Route>
     <Route path="/product" element={<Products/>}></Route>
-    <Route path='/' element={<Productorder1/>}></Route>
+    <Route path='/p' element={<Productorder1/>}></Route>
     </Routes>
     </div>
   )
