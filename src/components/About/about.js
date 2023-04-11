@@ -63,7 +63,7 @@ export default function About() {
     </div>
     <Container data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
         <div className={style.table}>
-          <table>
+          <table style={{backgroundColor:"white"}}>
             <tr>
               <th>Name of CEO</th>
               <td>Balakrishnan</td>

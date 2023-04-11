@@ -18,8 +18,8 @@ export default function Contact() {
     <div className={style.Contact}>
     <Container>
       <Row >
-        <Col data-aos="fade-right" data-aos-duration="1500" md={6}>
-          <div   className={style.card1} data-aos-duration="1500" >
+        <Col data-aos="fade-right"  data-aos-duration="1500" md={6}>
+          <div style={{backgroundColor:"white"}}  className={style.card1} data-aos-duration="1500" >
             <h2>SRI ELUMALAIYAN SAGO FACTORY</h2>
             <hr/>
             <div className={style.info}>
@@ -67,8 +67,8 @@ export default function Contact() {
       <Col data-aos="fade-right" data-aos-duration="1500" md={6}>
           <img src={mail} alt="n" />
         </Col>
-        <Col data-aos="fade-left"data-aos-duration="1500" md={6} >
-          <div className={style.card2}  >
+        <Col  data-aos="fade-left"data-aos-duration="1500" md={6} >
+          <div style={{backgroundColor:"white"}} className={style.card2}  >
             <form>
               <label>Your Name</label><br/>
               <input type="text" placeholder='Your Name'/><br/>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import style from '../../assets/Styles/Product/product.module.css'
+import Footer from '../Footer/footer';
 import { NavLink } from 'react-router-dom';
 function ProductList({data}) {
   return (
-    <div style={{backgroundColor:"rgb(253, 186, 127)"}}>
+    <div>
       <div className={style.header}>Our Product List</div>
       {data.map((data,index)=>
       {
@@ -54,6 +55,7 @@ function ProductList({data}) {
           </div>
         )
       })}
+      <Footer/>
     </div>
   )
 }
