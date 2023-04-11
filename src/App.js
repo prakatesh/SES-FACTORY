@@ -16,11 +16,10 @@ export default function App() {
     <Route path="/about" element={<About/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
     <Route path="/flipbook" element={<Flipbook/>}></Route>
-    <Route path="/product" element={<Products/>}>
-    <Route path='starch' element={<Product1Order/>}/>
-    <Route path='sago' element={<Product2Order/>}/>
-    <Route path='thappi' element={<Product3Order/>}/>
-    </Route>
+    <Route path="/product" element={<Products/>}></Route>
+    <Route path='/product/starch' element={<Product1Order/>}/>
+    <Route path='/product/sago' element={<Product2Order/>}/>
+    <Route path='/product/thappi' element={<Product3Order/>}/>
     </Routes>
     </div>
   )

@@ -8,7 +8,7 @@ const List=[
         topic:"Food Grade Tapioca Starch",
         p1:"Cassava as it stands to provide the most calorie content for its cheap price is also capable of replacing the place of rice and maize.",
         p2:"Since its flavorless taste, tapioca starch is used as a thickener and stabilizer in foods. Applications include baking, filling, and binding.",
-        link:"starch"
+        link:"/product/starch"
     },
     {
         k:"1",
@@ -16,7 +16,7 @@ const List=[
         topic:"Food Grade Tapoica Sago",
         p1:"Cassava as it stands to provide the most calorie content for its cheap price is also capable of replacing the place of rice and maize.",
         p2:"Since its flavorless taste, tapioca starch is used as a thickener and stabilizer in foods. Applications include baking, filling, and binding.",
-        link:"sago"
+        link:"/product/sago"
     },
     {
         k:"0",
@@ -24,7 +24,7 @@ const List=[
         topic:"Food Grade Tapoica Waste",
         p1:"This item is from cow and hen This was an other product which is used by local farmers.",
         p2:"Since its flavorless taste, tapioca starch is used as a thickener and stabilizer in foods. Applications include baking, filling, and binding.",
-        link:"thappi"
+        link:"/product/thappi"
     },
 ]
 export default List;
