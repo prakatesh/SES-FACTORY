@@ -5,7 +5,9 @@ import About from './components/About/about'
 import Contact from './components/Contact/contact'
 import Flipbook from './components/Flipbook/flipbook'
 import Products from './components/Product/products'
-import Productorder1 from './components/Product/Productorder1'
+import Product1Order from './components/Product/Page/Product1Order';
+import Product2Order from './components/Product/Page/Product2Order.js'
+import Product3Order from './components/Product/Page/Product3Order'
 export default function App() {
   return (
     <div>
@@ -14,9 +16,11 @@ export default function App() {
     <Route path="/about" element={<About/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
     <Route path="/flipbook" element={<Flipbook/>}></Route>
-    <Route path="product" element={<Products/>}>
+    <Route path="/product" element={<Products/>}>
+    <Route path='starch' element={<Product1Order/>}/>
+    <Route path='sago' element={<Product2Order/>}/>
+    <Route path='thappi' element={<Product3Order/>}/>
     </Route>
-    <Route path='sagoseed' element={<Productorder1/>}/>
     </Routes>
     </div>
   )

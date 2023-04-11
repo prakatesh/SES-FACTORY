@@ -24,7 +24,7 @@ function ProductList({data}) {
                     <p>{data.p1}</p>
                     <p>{data.p2}</p>
                     <div className={style.button}>
-                      <button  className={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to='/sagoseed'>Request Quote</NavLink></button>
+                      <button  className={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to={data.link}>Request Quote</NavLink></button>
                     </div>
                   </div>
                 </Col>
@@ -41,7 +41,7 @@ function ProductList({data}) {
                   <p>{data.p1}</p>
                   <p>{data.p2}</p>
                   <div className={style.button}>
-                    <button class={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to='/sagoseed'>Request Quote</NavLink></button>
+                    <button class={style.glow}><NavLink style={{ textDecoration: "none",color:"black"}}to={data.link}>Request Quote</NavLink></button>
                   </div>
                 </div>
               </Col>

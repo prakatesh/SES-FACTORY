@@ -1,10 +1,10 @@
 import React from 'react'
-import Navb from '../Navbar/navbar'
-import style from '../../assets/Styles/Product/Productorder.module.css'
-import img from '../../assets/Images/Products/sago.jpg'
-import Footer from '../Footer/footer'
+import Navb from '../../Navbar/navbar'
+import style from '../../../assets/Styles/Product/Productorder.module.css'
+import img from '../../../assets/Images/Products/Starch.jpg'
+import Footer from '../../Footer/footer'
 import { Col, Container, Row } from 'react-bootstrap'
-function Productorder1() {
+function Product1Order() {
   return (
     <div>
     <Navb/>
@@ -15,11 +15,11 @@ function Productorder1() {
                     <img src={img} alt="k" />
                 </Col>
                 <Col style={{paddingLeft:"7%",paddingTop:"1%"}} md={6}>
-                    <h3>Sago Seeds</h3>
-                    <p style={{fontSize:"3vh"}}>Price:<span style={{fontWeight:"bolder"}}>40.00-50.00/Kilogram</span></p>
+                    <h3>Starch</h3>
+                    <p style={{fontSize:"3vh"}}>Price:<span style={{fontWeight:"bolder"}}>30.00-40.00/Kilogram</span></p>
                     <b >Only order request in TON</b>
                     <div className={style.form}>
-                        <h6 style={{marginLeft:"17vh",marginTop:"2%"}}>Type: <span>Sago Seeds</span></h6><hr/>
+                        <h6 style={{marginLeft:"17vh",marginTop:"2%"}}>Type: <span>Starch</span></h6><hr/>
                         <h6 style={{marginLeft:"15vh"}} >Application: <span>Food, Gruel</span></h6><hr/>
                         <form>
                             <label>Name:</label>
@@ -49,4 +49,4 @@ function Productorder1() {
   )
 }
 
-export default Productorder1
+export default Product1Order
