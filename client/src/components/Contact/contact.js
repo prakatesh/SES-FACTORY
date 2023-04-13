@@ -11,7 +11,6 @@ import Footer from '../Footer/footer'
 import { NavLink } from 'react-router-dom';
 import info from '../../assets/Images/Contact/back.jpg'
 import mail from '../../assets/Images/Contact/mail.jpg'
-import axios from 'axios'
 export default function Contact() {
   const [name,setname]=useState('')
   const [email,setemail]=useState('')
@@ -19,16 +18,17 @@ export default function Contact() {
     console.log(name,email)
     e.preventDefault();
     try{
-        // await axios.post("http://127.0.0.1:8000/",{
-        await axios.post("http://localhost:8000/",{
-          name,email
-        })
-        .then((res)=>{
-          if(res.data==="done")
-          {
-            alert("successfully")
-          }
-        })
+        const data = {name: name, email: email};
+        console.log(data)
+        await fetch("http://localhost:8000",{
+          body : JSON.stringify(data),
+          method : "POST",
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }
+        ).then((response) => response.json())
+        .then((data) => console.log(data));
     }
     catch(e){
       console.log(e)

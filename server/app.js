@@ -1,22 +1,29 @@
 var express=require('express')
 var app=express()
+var cors = require("cors")
+var bodyParser = require('body-parser')
 const collection=require('./connect')
 
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-app.post('/contact',async(req,res)=>{
+app.post("/", (req,res) => {
+    console.log(req.body);
+    const {name,email}=req.body
     const data={
         name:name,
         email:email
     }
-    const {name,email}=req.body
     try{
-        await collection.insertMany([data])
-        console.log("data is inserted")
-        res.send("done")
-    }  
-    catch(e){
-        console.log("data is not insert")
+        collection.insertMany([data])
+        console.log("data inserted")
     }
+    catch(e)
+    {
+        console.log(e)
+    }
+    
 })
 
 app.listen(8000,()=>{
