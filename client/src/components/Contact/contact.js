@@ -11,16 +11,23 @@ import Footer from '../Footer/footer'
 import { NavLink } from 'react-router-dom';
 import info from '../../assets/Images/Contact/back.jpg'
 import mail from '../../assets/Images/Contact/mail.jpg'
+import { useNavigate } from 'react-router-dom';
 export default function Contact() {
+  const navigate=useNavigate()
   const [name,setname]=useState('')
   const [email,setemail]=useState('')
+  const [state,setstate]=useState('None')
+  const [city,setcity]=useState('')
+  const [number,setnumber]=useState('')
+  const [comment,setcomment]=useState('')
+  
   async function submit(e){
-    console.log(name,email)
     e.preventDefault();
     try{
-        const data = {name: name, email: email};
+      console.log(name,email,state,city,number,comment)
+        const data = {name: name, email:email,state:state,city:city,number:number,comment:comment};
         console.log(data)
-        await fetch("http://localhost:8000",{
+        await fetch("http://localhost:8000/contact",{
           body : JSON.stringify(data),
           method : "POST",
           headers: {
@@ -28,7 +35,16 @@ export default function Contact() {
           },
         }
         ).then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) =>{
+          console.log(data)
+          if(data==="done")
+        {
+          console.log("object")
+          navigate('/')
+        }
+
+        });
+        
     }
     catch(e){
       console.log(e)
@@ -97,21 +113,19 @@ export default function Contact() {
               <label>Email </label><br/>
               <input type="text" onChange={(e)=>{setemail(e.target.value)}} placeholder='Email'/><br/>
               <label for="State">Select State:</label><br/>
-              <select id="State">
-                <option selected value="None">None</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Dehli">Dehli</option>
-                <option value="Goa">Goa</option>
+              <select onChange={(e)=>setstate(e.target.value)}id="State">
+                <option onChange={(e)=>setstate(e.target.value)} selected value="None">None</option>
+                <option onChange={(e)=>setstate(e.target.value)} value="Tamil Nadu">Tamil Nadu</option>
+                <option onChange={(e)=>setstate(e.target.value)} value="Dehli">Dehli</option>
+                <option onChange={(e)=>setstate(e.target.value)} value="kerala">kerala</option>
                 <option value="Punjab">Punjab</option>
               </select><br/>
               <label>City </label><br/>
-              <input type="text" placeholder='City '/><br/>
+              <input onChange={(e)=>setcity(e.target.value)} type="text" placeholder='City '/><br/>
               <label>Phone / Mobile </label><br/>
-              <input type="text" placeholder='Phone / Mobile '/><br/>
-              <label>City </label><br/>
-              <input type="text" placeholder='City '/><br/>
+              <input onChange={(e)=>setnumber(e.target.value)} type='number' placeholder='Phone / Mobile'/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea type="textarea" placeholder='Your Requirement' rows="4" cols="45"/><br/>
+              <textarea onChange={(e)=>setcomment(e.target.value)} type="textarea" placeholder='Your Requirement' rows="4" cols="45"/><br/>
               <button className={style.button} onClick={submit} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>

@@ -2,21 +2,26 @@ var express=require('express')
 var app=express()
 var cors = require("cors")
 var bodyParser = require('body-parser')
-const collection=require('./connect')
-
+const contacts=require('./model/contacts')
+require('./connect')
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.post("/", (req,res) => {
+app.post("/contact", (req,res) => {
     console.log(req.body);
-    const {name,email}=req.body
+    const {name,email,state,city,number,comment}=req.body
     const data={
         name:name,
-        email:email
+        email:email,
+        state:state,
+        city:city,
+        number:number,
+        comment:comment
     }
     try{
-        collection.insertMany([data])
+        contacts.insertMany([data])
+        res.json("done")
         console.log("data inserted")
     }
     catch(e)
