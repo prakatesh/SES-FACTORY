@@ -4,15 +4,13 @@ const cors = require("cors")
 const bodyParser = require('body-parser')
 require('./connect')
 const userRouter=require('./Router/userRouter')
-const {contact} =require('./controllers/contact')
-
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-app.post('/user',contact)
+app.use('/user',userRouter)
 
 // app.post("/contact", (req,res) => {
 //     console.log(req.body);
