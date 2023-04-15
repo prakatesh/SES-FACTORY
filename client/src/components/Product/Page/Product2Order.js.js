@@ -1,10 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navb from '../../Navbar/navbar'
 import style from '../../../assets/Styles/Product/Productorder.module.css'
 import img from '../../../assets/Images/Products/sago.jpg'
 import Footer from '../../Footer/footer'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 function Product2Order() {
+    const navigate=useNavigate()
+    const [name,setname]=useState('')
+    const [email,setemail]=useState('')
+    const [number,setnumber]=useState('')
+    const [Quantity,setquantity]=useState('')
+    const [Purpose,setpurpose]=useState('')
+    const [comment,setcomment]=useState('')
+
+    async function submit(e){
+        e.preventDefault();
+        console.log(name,email,number,Quantity,Purpose,comment)
+
+        const data={
+            name:name,
+            email:email,
+            number:number,
+            Quantity:Quantity,
+            Purpose:Purpose,
+            comment:comment
+        }
+
+        await fetch('http://localhost:8000/user/product/sago',{
+            body:JSON.stringify(data),
+            method:"post",
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+            console.log(data)
+            if(data==="done")
+            {
+                alert("The request is send to Admin successfully.Admin will contact as soon as possible")
+                navigate('/')
+            }
+        })
+
+        .catch((e)=>console.log(e))
+    }
   return (
     <div>
     <Navb/>
@@ -23,21 +64,22 @@ function Product2Order() {
                         <h6 style={{marginLeft:"15vh"}} >Application: <span>Food, Gruel</span></h6><hr/>
                         <form>
                             <label>Name:</label>
-                            <input style={{marginLeft:"9vh"}} type='text' placeholder='Name'/><br/>
+                            <input onChange={(e)=>setname(e.target.value)}  style={{marginLeft:"9vh"}} type='text' placeholder='Name'/><br/>
                             <label>Email:</label>
-                            <input style={{marginLeft:"10vh"}} type='text' placeholder='Email'/><br/>
+                            <input onChange={(e)=>setemail(e.target.value)}  style={{marginLeft:"10vh"}} type='text' placeholder='Email'/><br/>
                             <label>Mobile No:</label>
-                            <input style={{marginLeft:"5vh"}} type='text' placeholder='Enter Phone number'/><br/>
+                            <input  onChange={(e)=>setnumber(e.target.value)}  style={{marginLeft:"5vh"}} type='text' placeholder='Enter Phone number'/><br/>
                             <label>Quantity<b>(Ton)</b>:</label>
-                            <input style={{marginLeft:"1vh"}} type='text' placeholder='Estimated Quantity'/><br/>
+                            <input  onChange={(e)=>setquantity(e.target.value)}  style={{marginLeft:"1vh"}} type='text' placeholder='Estimated Quantity'/><br/>
                             <label>Purpose:</label>
-                            <select style={{height: "80%",width: "50%",marginLeft:"7vh"}} name="cars" id="cars">
-                                <option value="Reselling">Reselling</option>
-                                <option value="Raw-Material">Raw-Material</option>
+                            <select onChange={(e)=>setpurpose(e.target.value)}  style={{height: "80%",width: "50%",marginLeft:"7vh"}} >
+                                <option onChange={(e)=>setpurpose(e.target.value)}  value="None">None</option>
+                                <option onChange={(e)=>setpurpose(e.target.value)}  value="Reselling">Reselling</option>
+                                <option  onChange={(e)=>setpurpose(e.target.value)} value="Raw-Material">Raw-Material</option>
                             </select><br/>
                             <label>Requirement Detail</label><br/>
-                            <textarea type='textarea' cols="55"/><br/>
-                            <button>Send Enquiry</button>
+                            <textarea  onChange={(e)=>setcomment(e.target.value)}  type='textarea' cols="55"/><br/>
+                            <button onClick={submit}>Send Enquiry</button>
                         </form>
                     </div>
                 </Col>
