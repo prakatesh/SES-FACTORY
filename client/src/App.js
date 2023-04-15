@@ -8,6 +8,8 @@ import Products from './components/Product/products'
 import Product1Order from './components/Product/Page/Product1Order';
 import Product2Order from './components/Product/Page/Product2Order.js'
 import Product3Order from './components/Product/Page/Product3Order'
+import Signup from './components/SignUp/Signup'
+import Login from './components/Login/Login'
 export default function App() {
   return (
     <div>
@@ -20,6 +22,8 @@ export default function App() {
     <Route path='/product/starch' element={<Product1Order/>}/>
     <Route path='/product/sago' element={<Product2Order/>}/>
     <Route path='/product/thappi' element={<Product3Order/>}/>
+    <Route path='/signup' element={<Signup/>}></Route>
+    <Route path='/login' element={<Login/>}></Route>
     </Routes>
     </div>
   )

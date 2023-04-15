@@ -1,0 +1,45 @@
+.card
+{
+    background-color: #e3e348b7;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    padding: 10vh;
+}
+.login
+{
+    padding-left: 40vh;
+    padding-right: 40vh;
+    padding-top: 10vh;
+}
+.card h6{
+    font-size: 5vh;
+    text-transform: uppercase;
+}
+.card input{
+    width: 40vh;
+}
+.card label{
+    font-size: larger;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+.card a{
+    text-decoration: none;
+}
+.link{
+    padding-top: 2vh;
+}
+.card button{
+    font-size: larger;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 3vh;
+    padding-left: 3vh;
+    color: rgb(50, 48, 48);
+    background-color: #5e7df6;
+    border:none
+}
+.button
+{
+    padding-top: 2vh;
+}
