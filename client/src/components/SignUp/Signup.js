@@ -7,13 +7,11 @@ function Signup() {
   useEffect(()=>{
     inputfield.current.focus()
   })
-  const [name,setname]=useState('')
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')
-  const [repass,setrepass]=useState('')
 
     async function submit(e){
-    console.log(name,email,password,repass)
+    console.log(email,password)
     e.preventDefault()
 
     const data={
