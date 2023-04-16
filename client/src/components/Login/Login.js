@@ -8,6 +8,36 @@ function Login() {
   useEffect(()=>{
     ref1.current.focus();
   },[])
+  const [name,setname]=useState('')
+  const [email,setemail]=useState('')
+  const [password,setpassword]=useState('')
+  const [repass,setrepass]=useState('')
+
+    async function submit(e){
+    console.log(name,email,password,repass)
+    e.preventDefault()
+
+    const data={
+      email:email,
+      password:password,
+    }
+
+    await fetch("http://localhost:8000/admin/login",{
+      body:JSON.stringify(data),
+      method:"post",
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    }).then((response) => response.json())
+    .then((data) =>{
+      console.log(data)
+      if(data==="done")
+    {
+      console.log("object")
+    }
+    });
+
+  }
   return (
     <div>
       <Navb/>
@@ -17,11 +47,11 @@ function Login() {
             <h6>Welcome !!</h6>
             <label>Email</label>
             <br />
-            <input ref={ref1} type="text" />
+            <input ref={ref1} type="text" onChange={(e)=>setemail(e.target.value)} />
             <br />
             <label>Password</label>
             <br />
-            <input type="password" />
+            <input type="password" onChange={(e)=>setpassword(e.target.value)}/>
             <br />
             <div className={styles.link}>
               <NavLink>Forget Password?</NavLink>
@@ -32,7 +62,7 @@ function Login() {
               </span>
             </div>
             <div className={styles.button}>
-              <button>Login</button>
+              <button onClick={submit}>Login</button>
             </div>
           </div>
         </div>
