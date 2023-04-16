@@ -1,5 +1,5 @@
 import { Container } from "@mui/system";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../../assets/Styles/Login/login.module.css";
 import Navb from "../Navbar/navbar";
@@ -8,13 +8,11 @@ function Login() {
   useEffect(()=>{
     ref1.current.focus();
   },[])
-  const [name,setname]=useState('')
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')
-  const [repass,setrepass]=useState('')
 
     async function submit(e){
-    console.log(name,email,password,repass)
+    console.log(email,password)
     e.preventDefault()
 
     const data={

@@ -1,24 +1,21 @@
 import { Container } from "@mui/system";
-import React, { useEffect, useRef, useState } from "react";
+import React, {useState} from "react";
 import styles from "../../assets/Styles/SignUp/signup.module.css";
 import Navb from '../Navbar/navbar'
 function Signup() {
-  const inputfield=useRef();
-  useEffect(()=>{
-    inputfield.current.focus()
-  })
+  const [name,setname]=useState('')
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')
+  const [repass,setrepass]=useState('')
 
     async function submit(e){
-    console.log(email,password)
+    console.log(email,password,repass)
     e.preventDefault()
 
     const data={
       name:name,
       email:email,
-      password:password,
-      repass:repass
+      password:password
     }
 
     await fetch("http://localhost:8000/admin/signup",{
@@ -47,7 +44,7 @@ function Signup() {
             <h6>Welcome</h6>
             <label>Name</label>
             <br />
-            <input ref={inputfield} type="text" onChange={(e)=>setname(e.target.value)} />
+            <input type="text" onChange={(e)=>setname(e.target.value)} />
             <br />
             <label>Email</label>
             <br />
