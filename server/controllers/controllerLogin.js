@@ -1,6 +1,6 @@
-const signUpModel=require('../model/signUp')
+const signup=require('../model/signUp')
 
-exports.Login=(req,res)=>
+exports.Login=async(req,res)=>
 {
     console.log(req.body)
     const {email,pass}=req.body
@@ -10,20 +10,16 @@ exports.Login=(req,res)=>
     //     pass:pass
     // }
 
-    try{
-        signUpModel.find({email:"prakatesh"},(err,data)=>{
+        signup.find({name:"prakatesh"},(err,data)=>
+        {
             if(err)
             {
                 console.log("error")
             }
             else
             {
-                console.log(data)
+                console.log("data")
             }
         })
         res.send("done")
-    }
-    catch(e){
-        console.log(e.meesage)
-    }
 }
