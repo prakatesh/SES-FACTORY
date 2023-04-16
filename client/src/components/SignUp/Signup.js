@@ -20,7 +20,7 @@ function Signup() {
             <br />
             <label>Email</label>
             <br />
-            <input type="text" />
+            <input type="text"  />
             <br />
             <label>Password</label>
             <br />
