@@ -7,7 +7,6 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -15,10 +14,19 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 
+
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+
+import {useNavigate} from 'react-router-dom'
+
 const drawerWidth = 240;
 
 
 export default function ResponsiveDrawer(props) {
+
+  const navigate=useNavigate()
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -27,36 +35,61 @@ export default function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const drawer = (
     <div>
+      <Toolbar style={{fontWeight:"700"}}>
+        DashBoard
+      </Toolbar>
       <Divider />
       <List>
         <ListItemButton >
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Summa</ListItemText>
+          <ListItemText >Manging</ListItemText>
         </ListItemButton>
         <ListItemButton >
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Summa</ListItemText>
+          <ListItemText >FeedBack</ListItemText>
+        </ListItemButton>
+        <ListItemButton >
+          <ListItemIcon>
+          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}>
+                Product Request 
+              </ListItemText>
+          <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}>
+                <MenuItem onClick={()=>navigate('/about')} >Starch</MenuItem>
+                <MenuItem onClick={()=>navigate('/about')} >Sago</MenuItem>
+                <MenuItem onClick={()=>navigate('/about')} >Thappi</MenuItem>
+          </Menu>
         </ListItemButton>
       </List>
       <Divider />
-      {/* <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
     </div>
   );
 
@@ -119,7 +152,7 @@ export default function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box
+      {/* <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
@@ -151,7 +184,7 @@ export default function ResponsiveDrawer(props) {
           eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

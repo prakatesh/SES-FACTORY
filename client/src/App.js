@@ -11,11 +11,11 @@ import Product3Order from './components/Product/Page/Product3Order'
 import Signup from './components/Admin/SignUp/Signup'
 import Login from './components/Admin/Login/Login'
 import ResponsiveDrawer from './components/Admin/Slidebar/slidebar'
+import StarchView from './components/Admin/Views/StarchView'
 export default function App() {
   return (
     <div>
     <Routes>
-    <Route path="/" element={<ResponsiveDrawer/>}></Route>
     <Route path="/home" element={<Home/>}></Route>
     <Route path="/about" element={<About/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
@@ -24,8 +24,10 @@ export default function App() {
     <Route path='/product/starch' element={<Product1Order/>}/>
     <Route path='/product/sago' element={<Product2Order/>}/>
     <Route path='/product/thappi' element={<Product3Order/>}/>
-    <Route path='/signup' element={<Signup/>}></Route>
-    <Route path='/login' element={<Login/>}></Route>
+    <Route path='/admin/signup' element={<Signup/>}></Route>
+    <Route path='/admin/login' element={<Login/>}></Route>
+    <Route path="/" element={<ResponsiveDrawer/>}></Route>
+    <Route path='/admin/view/Strach' element={<StarchView/>}></Route>
     </Routes>
     </div>
   )
