@@ -3,23 +3,29 @@ const signup=require('../model/signUp')
 exports.Login=async(req,res)=>
 {
     console.log(req.body)
-    const {email,pass}=req.body
+    const {email,password}=req.body
 
-    // const data={
-    //     email:email,
-    //     pass:pass
-    // }
+        try{
+            const data=await signup.findOne({email:email})
 
-        signup.find({name:"prakatesh"},(err,data)=>
-        {
-            if(err)
+            if(!data)
             {
-                console.log("error")
+                res.json("wrong Admin")
+                console.log("wrong Admin")
+            }
+
+            else if(data.password!==password)
+            {
+                res.json("wrong password")
+                console.log("wrong password")
             }
             else
             {
-                console.log("data")
+                res.json("correct Admin")
+                console.log("correct Admin")
             }
-        })
-        res.send("done")
+        }
+        catch(e){
+            console.log(e)
+        }
 }

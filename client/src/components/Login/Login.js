@@ -29,10 +29,13 @@ function Login() {
     }).then((response) => response.json())
     .then((data) =>{
       console.log(data)
-      if(data==="done")
-    {
-      console.log("object")
-    }
+      if(data==="correct Admin")
+      {
+        
+      }
+      else{
+        alert("wrong admin")
+      }
     });
 
   }
