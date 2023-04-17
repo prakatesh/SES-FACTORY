@@ -27,7 +27,7 @@ function Navb() {
             <NavLink to="/flipbook"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-book" /></span>Flipbook</NavLink>
             <NavLink to="/product"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-box-open" /></span>Product</NavLink>
             <NavLink to="/contact"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-phone-volume"/></span>Contact us</NavLink>
-            <NavLink to="/login"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-lock" /></span>Admin</NavLink>
+            <NavLink to="/admin/login"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-lock" /></span>Admin</NavLink>
             </div>
           </Nav>
         </Navbar.Collapse>

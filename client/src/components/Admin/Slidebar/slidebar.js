@@ -18,8 +18,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+import Avatar from '@mui/material/Avatar';
 
 import {useNavigate} from 'react-router-dom'
+import { Tooltip } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -83,9 +85,9 @@ export default function ResponsiveDrawer(props) {
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
               }}>
-                <MenuItem onClick={()=>navigate('/about')} >Starch</MenuItem>
-                <MenuItem onClick={()=>navigate('/about')} >Sago</MenuItem>
-                <MenuItem onClick={()=>navigate('/about')} >Thappi</MenuItem>
+                <MenuItem onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
+                <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
+                <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
         </ListItemButton>
       </List>
@@ -116,8 +118,21 @@ export default function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Welcome Admin
           </Typography>
+          <Tooltip title="Account settings">
+          <IconButton
+            onClick={handleClick}
+            size="small"
+            sx={{ ml: 2 }}
+            aria-controls={open ? 'account-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+          >
+            <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
+           
+          </IconButton>
+        </Tooltip>
         </Toolbar>
       </AppBar>
       <Box

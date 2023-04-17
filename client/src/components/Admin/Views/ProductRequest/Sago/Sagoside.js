@@ -25,7 +25,7 @@ import {useNavigate} from 'react-router-dom'
 const drawerWidth = 240;
 
 
-export default function FeedBackSide(props) {
+export default function Starchside(props) {
 
   // console.log(props.data)
   const navigate=useNavigate()
@@ -60,22 +60,22 @@ export default function FeedBackSide(props) {
           </ListItemIcon>
           <ListItemText >Manging</ListItemText>
         </ListItemButton>
-        <ListItemButton style={{backgroundColor:"black"}} onClick={()=>navigate('/admin/view/feedback')}>
+        <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon style={{color:"white"}} ><InboxIcon /> </ListItemIcon>
+          <ListItemIcon  ><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText style={{color:"white"}}>FeedBack</ListItemText>
+          <ListItemText >FeedBack</ListItemText>
         </ListItemButton>
-        <ListItemButton  >
+        <ListItemButton style={{backgroundColor:"black"}} >
           <ListItemIcon>
-          <ListItemIcon ><InboxIcon /> </ListItemIcon>
+          <ListItemIcon style={{color:"white"}}><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText id="basic-button"
+          <ListItemText style={{color:"white"}} id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}>
-                Product Request 
+                Sago Request 
               </ListItemText>
           <Menu
               id="basic-menu"
@@ -86,7 +86,7 @@ export default function FeedBackSide(props) {
                 'aria-labelledby': 'basic-button',
               }}>
                 <MenuItem onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
-                <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
+                <MenuItem style={{backgroundColor:"black",color:"white"}} onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
         </ListItemButton>
@@ -118,7 +118,7 @@ export default function FeedBackSide(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            FeedBack
+            Starch request
           </Typography>
         </Toolbar>
       </AppBar>
@@ -165,10 +165,10 @@ export default function FeedBackSide(props) {
               <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>State</th>
-                <th>City</th>
                 <th>Number</th>
+                <th>Quantity</th>
                 <th>Comment</th>
+                <th>Purpose</th>
                 <th>Message</th>
                 <th>Delete</th>
               </tr>
@@ -177,9 +177,9 @@ export default function FeedBackSide(props) {
                   <tr>
                     <td>{i.name}</td>
                     <td>{i.email}</td>
-                    <td>{i.state}</td>
-                    <td>{i.city}</td>
                     <td>{i.number}</td>
+                    <td>{i.Quantity}</td>
+                    <td>{i.Purpose}</td>
                     <td>{i.comment}</td>
                     <td><Button value={i.name} variant="success">Message</Button></td>
                     <td><Button value={i.name} variant="danger">Delete</Button></td>

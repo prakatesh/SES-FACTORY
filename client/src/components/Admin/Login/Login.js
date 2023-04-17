@@ -1,9 +1,10 @@
 import { Container } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import styles from "../../../assets/Styles/Login/login.module.css";
 import Navb from "../../Navbar/navbar";
 function Login() {
+  const navigate=useNavigate()
   const ref1=useRef();
   useEffect(()=>{
     ref1.current.focus();
@@ -31,7 +32,7 @@ function Login() {
       console.log(data)
       if(data==="correct Admin")
       {
-        
+        navigate('/dashboard')
       }
       else{
         alert("wrong admin")
@@ -58,7 +59,7 @@ function Login() {
               <NavLink>Forget Password?</NavLink>
               <br />
               <span>
-                <NavLink to="/signup">New User?Sign up</NavLink>
+                <NavLink to="/admin/signup">New User?Sign up</NavLink>
                 <br />
               </span>
             </div>
