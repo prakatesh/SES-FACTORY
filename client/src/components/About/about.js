@@ -60,7 +60,7 @@ export default function About() {
       </Col>
     </Row>
   </Container>
-    </div>
+    </div >
     <Container data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
         <div className={style.table}>
           <table style={{backgroundColor:"white"}}>

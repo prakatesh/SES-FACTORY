@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-
+// import style from '../../../../assets/Styles/FeedBack/feedback.module.css';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -24,8 +24,9 @@ import {useNavigate} from 'react-router-dom'
 const drawerWidth = 240;
 
 
-export default function ResponsiveDrawer(props) {
+export default function FeedBackSide(props) {
 
+  // console.log(props.data)
   const navigate=useNavigate()
 
   const { window } = props;
@@ -58,11 +59,11 @@ export default function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText >Manging</ListItemText>
         </ListItemButton>
-        <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
+        <ListItemButton style={{backgroundColor:"black"}} onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          <ListItemIcon style={{color:"white"}} ><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText>FeedBack</ListItemText>
+          <ListItemText style={{color:"white"}}>FeedBack</ListItemText>
         </ListItemButton>
         <ListItemButton >
           <ListItemIcon>
@@ -116,7 +117,7 @@ export default function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            FeedBack
           </Typography>
         </Toolbar>
       </AppBar>
@@ -152,39 +153,42 @@ export default function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      {/* <Box
+      <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
+        <div> 
+            <table >
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Number</th>
+                <th>Comment</th>
+              </tr>
+              {props.data.map(i=>{
+                return(
+                  <tr>
+                    <td>{i.name}</td>
+                    <td>{i.email}</td>
+                    <td>{i.state}</td>
+                    <td>{i.city}</td>
+                    <td>{i.number}</td>
+                    <td>{i.comment}</td>
+                  </tr>
+                )
+              })}
+            </table>
+            
+        </div>
         </Typography>
         <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
+          
         </Typography>
-      </Box> */}
+      </Box>
     </Box>
   );
 }
