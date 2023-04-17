@@ -1,7 +1,7 @@
 import { Container } from "@mui/system";
 import React, {useState} from "react";
-import styles from "../../assets/Styles/SignUp/signup.module.css";
-import Navb from '../Navbar/navbar'
+import styles from "../../../assets/Styles/SignUp/signup.module.css";
+import Navb from '../../Navbar/navbar'
 function Signup() {
   const [name,setname]=useState('')
   const [email,setemail]=useState('')

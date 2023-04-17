@@ -1,8 +1,8 @@
 import { Container } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
-import styles from "../../assets/Styles/Login/login.module.css";
-import Navb from "../Navbar/navbar";
+import styles from "../../../assets/Styles/Login/login.module.css";
+import Navb from "../../Navbar/navbar";
 function Login() {
   const ref1=useRef();
   useEffect(()=>{

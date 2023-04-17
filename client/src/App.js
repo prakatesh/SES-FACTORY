@@ -8,13 +8,15 @@ import Products from './components/Product/products'
 import Product1Order from './components/Product/Page/Product1Order';
 import Product2Order from './components/Product/Page/Product2Order.js'
 import Product3Order from './components/Product/Page/Product3Order'
-import Signup from './components/SignUp/Signup'
-import Login from './components/Login/Login'
+import Signup from './components/Admin/SignUp/Signup'
+import Login from './components/Admin/Login/Login'
+import ResponsiveDrawer from './components/Admin/Slidebar/slidebar'
 export default function App() {
   return (
     <div>
     <Routes>
-    <Route path="/" element={<Home/>}></Route>
+    <Route path="/" element={<ResponsiveDrawer/>}></Route>
+    <Route path="/home" element={<Home/>}></Route>
     <Route path="/about" element={<About/>}></Route>
     <Route path="/contact" element={<Contact/>}></Route>
     <Route path="/flipbook" element={<Flipbook/>}></Route>
