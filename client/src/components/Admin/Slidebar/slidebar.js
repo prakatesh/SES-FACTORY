@@ -130,7 +130,6 @@ export default function ResponsiveDrawer(props) {
             aria-expanded={open ? 'true' : undefined}
           >
             <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
-           
           </IconButton>
         </Tooltip>
         </Toolbar>
