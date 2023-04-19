@@ -58,7 +58,7 @@ export default function Starchside(props) {
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Manging</ListItemText>
+          <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>

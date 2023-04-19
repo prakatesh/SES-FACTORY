@@ -18,10 +18,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-import Avatar from '@mui/material/Avatar';
-
 import {useNavigate} from 'react-router-dom'
-import { Tooltip } from '@mui/material';
+
+import {Col, Row} from 'react-bootstrap'
 
 const drawerWidth = 240;
 
@@ -58,7 +57,7 @@ export default function ResponsiveDrawer(props) {
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Manging</ListItemText>
+          <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
@@ -120,18 +119,7 @@ export default function ResponsiveDrawer(props) {
           <Typography variant="h6" noWrap component="div">
             Welcome Admin
           </Typography>
-          <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32 }}>P</Avatar>
-          </IconButton>
-        </Tooltip>
+          
         </Toolbar>
       </AppBar>
       <Box
@@ -166,39 +154,60 @@ export default function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      {/* <Box
+      <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
+          <Row>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"yellow",padding:"5vh"}}>
+            <div style={{fontWeight:"bolder"}}>
+            Today Purchase
+            </div>
+            <div style={{fontWeight:"500"}}>
+              5,00,000
+            </div>
+          </div>
+            </Col>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"blue",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Sales
+            </div>
+            <div style={{fontWeight:"500"}}>
+              5,00,000
+            </div>
+          </div>
+            </Col>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"green",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Profite/Loss
+            </div>
+            <div style={{fontWeight:"500"}}>
+              5,00,000
+            </div>
+          </div>
+            </Col>
+          </Row>
         </Typography>
         <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
+        <Row>
+          <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"silver",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            InStock
+            </div>
+            <div style={{fontWeight:"500"}}>
+              5,00,000
+            </div>
+          </div>
+            </Col>
+          </Row>
         </Typography>
-      </Box> */}
+      </Box>
     </Box>
   );
 }

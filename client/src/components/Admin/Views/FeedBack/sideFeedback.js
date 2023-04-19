@@ -58,7 +58,7 @@ export default function FeedBackSide(props) {
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Manging</ListItemText>
+          <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton style={{backgroundColor:"black"}} onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
