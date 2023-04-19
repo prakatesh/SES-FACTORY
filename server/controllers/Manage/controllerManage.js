@@ -13,7 +13,10 @@ exports.manage=async(req,res)=>
         Starch:Starch,
         Thappi:Thappi,
         Expensive:Expensive,
-        Date:Date
+        Date:Date,
+        starchStock:Starch,
+        thappiStock:Thappi,
+        totalAmount:0
     }
     try{
         await manageModel.create([data])

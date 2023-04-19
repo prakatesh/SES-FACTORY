@@ -19,71 +19,16 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 import {useNavigate} from 'react-router-dom'
-
-import {Col, Row, Stack} from 'react-bootstrap'
-
-import form_img from '../../../assets/Images/Admin/form.jpg'
-import { Button, TextField } from '@mui/material';
+import { Button } from 'react-bootstrap';
 
 const drawerWidth = 240;
 
 
-export default function Manageside1(props) {
+export default function Mainside(props) {
 
-  const [todayPurchase,settodayPurchase]=React.useState('')
-  const [bundle,setbundle]=React.useState('')
-  const [pointRate,setpointRate]=React.useState('')
-  const [starch,setstarch]=React.useState('')
-  const [thappi,setthappi]=React.useState('')
-  const [date,setdate]=React.useState('')
-  const [expensive,setexpensive]=React.useState('')
 
-  async function submit(e){
-    e.preventDefault();
-    try{
-        const data = {
-          TodayPurchase:todayPurchase,
-          Bundle:bundle,
-          PointRate:pointRate,
-          Starch:starch,
-          Thappi:thappi,
-          Expensive:expensive,
-          Date:date};
-        console.log(data)
-        await fetch("http://localhost:8000/admin/manage",{
-          body : JSON.stringify(data),
-          method : "POST",
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        }
-        ).then((response) => response.json())
-        .then((data) =>{
-          console.log(data)
-          if(data==="done")
-        {
-          navigate('/admin/main')
-        }
 
-        });
-        
-    }
-    catch(e){
-      console.log(e)
-    }
-  }
-
-  function change(e){
-    setpointRate(e.target.value)
-    let vv=(bundle)/80
-    let str=(bundle)/4.1
-    let exp=bundle*300
-    // console.log(typeof(vv))
-    setthappi(vv)
-    setstarch(str)
-    setexpensive(exp)
-    console.log(date)
-  }
+  
   const navigate=useNavigate()
 
   const { window } = props;
@@ -174,7 +119,7 @@ export default function Manageside1(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Today Update
+            Main
           </Typography>
           
         </Toolbar>
@@ -217,38 +162,41 @@ export default function Manageside1(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          <Row>
-            <Col md={2}></Col>
-            <Col md={6}>
-                <div style={{boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",textAlign:"center",paddingTop:'2vh',paddingBottom:'2vh'}}>
-                    <img src={form_img} alt='form_img' style={{width:"70%"}}/>
-                    <div >
-                        <form >
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '47ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                            >
-                            <TextField id="outlined-basic" onChange={(e)=>settodayPurchase(e.target.value)} value={todayPurchase} label="Today_purchase" variant="outlined" />
-                            <TextField id="outlined-basic" onChange={(e)=>setbundle(e.target.value)} value={bundle} label="Bundle" variant="outlined" />
-                            <TextField id="outlined-basic" onChange={change} value={pointRate} label="Point_Rate" variant="outlined" />
-                            <TextField id="outlined-basic" onChange={(e)=>setstarch(e.target.value)} value={starch} label="Starch" variant="outlined" />
-                            <TextField id="outlined-basic" onChange={(e)=>setthappi(e.target.value)} value={thappi} label="Thappi" variant="outlined" />
-                            <TextField id="outlined-basic" onChange={(e)=>setexpensive(e.target.value)} value={expensive} label="Expensive" variant="outlined" />
-                            <input onChange={(e)=>setdate(e.target.value)} value={date} type='date'/>
-                            <Stack >
-                                <Button  onClick={submit} variant="contained">Next</Button>
-                            </Stack>
-                        </Box>
-                        </form>
-                    </div>
-                </div>
-            </Col>
-            <Col md={3}></Col>
-          </Row>
+        <div> 
+            <table >
+              <tr>
+                <th>TodayPurchase</th>
+                <th>Bundle</th>
+                <th>PointRate</th>
+                <th>Starch</th>
+                <th>Thappi</th>
+                <th>Expensive</th>
+                <th>Date</th>
+                <th>starchStock</th>
+                <th>thappiStock</th>
+                <th>totalAmount</th>
+                <th>Edit</th>
+              </tr>
+              {props.data.map(i=>{
+                return(
+                  <tr>
+                    <td>{i.TodayPurchase}</td>
+                    <td>{i.Bundle}</td>
+                    <td>{i.PointRate}</td>
+                    <td>{i.Starch}</td>
+                    <td>{i.Thappi}</td>
+                    <td>{i.Expensive}</td>
+                    <td>{i.Date}</td>
+                    <td>{i.starchStock}</td>
+                    <td>{i.thappiStock}</td>
+                    <td>{i.totalAmount}</td>
+                    <td><Button value={i.name} variant="success">Edit</Button></td>
+                  </tr>
+                )
+              })}
+            </table>
+            
+        </div>
         </Typography>
         <Typography paragraph>
         

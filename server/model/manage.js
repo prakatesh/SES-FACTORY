@@ -27,6 +27,19 @@ const manageModels=mongoose.Schema({
     Date:{
         type:String,
         require:true
+    },
+    thappiStock:{
+        type:Number,
+        require:true
+    },
+    starchStock:{
+        type:Number,
+        require:true,
+        
+    },
+    totalAmount:{
+        type:Number,
+        require:true
     }
 })
 
