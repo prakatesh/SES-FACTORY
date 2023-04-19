@@ -54,7 +54,7 @@ export default function Starchside(props) {
       </Toolbar>
       <Divider />
       <List>
-        <ListItemButton >
+        <ListItemButton onClick={()=>navigate('/admin/manage')}>
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>

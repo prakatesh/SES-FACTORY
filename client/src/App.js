@@ -15,6 +15,7 @@ import FeedBack from './components/Admin/Views/FeedBack/FeedBack'
 import StarchView from './components/Admin/Views/ProductRequest/Starch/StarchView'
 import SagoView from './components/Admin/Views/ProductRequest/Sago/SagoView'
 import ThappiView from './components/Admin/Views/ProductRequest/Thappi/ThappiView'
+import Manageside1 from './components/Admin/Management/manageside1'
 export default function App() {
   return (
     <div>
@@ -30,6 +31,7 @@ export default function App() {
     <Route path='/admin/signup' element={<Signup/>}></Route>
     <Route path='/admin/login' element={<Login/>}></Route>
     <Route path="/dashboard" element={<ResponsiveDrawer/>}></Route>
+    <Route path="/admin/manage" element={<Manageside1/>}></Route>
     <Route path='/admin/view/feedback' element={<FeedBack/>}></Route>
     <Route path='/admin/view/starch' element={<StarchView/>}></Route>
     <Route path='/admin/view/sago' element={<SagoView/>}></Route>

@@ -54,7 +54,7 @@ export default function Thappiside(props) {
       </Toolbar>
       <Divider />
       <List>
-        <ListItemButton >
+        <ListItemButton onClick={()=>navigate('/admin/manage')}>
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>

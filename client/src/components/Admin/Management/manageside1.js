@@ -13,21 +13,77 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import Button from 'react-bootstrap/Button';
-// import style from '../../../../assets/Styles/FeedBack/feedback.module.css';
+
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-
 import {useNavigate} from 'react-router-dom'
+
+import {Col, Row, Stack} from 'react-bootstrap'
+
+import form_img from '../../../assets/Images/Admin/form.jpg'
+import { Button, TextField } from '@mui/material';
 
 const drawerWidth = 240;
 
 
-export default function Starchside(props) {
+export default function Manageside1(props) {
 
-  // console.log(props.data)
+  const [todayPurchase,settodayPurchase]=React.useState('')
+  const [bundle,setbundle]=React.useState('')
+  const [pointRate,setpointRate]=React.useState('')
+  const [starch,setstarch]=React.useState('')
+  const [thappi,setthappi]=React.useState('')
+  const [date,setdate]=React.useState('')
+  const [expensive,setexpensive]=React.useState('')
+
+  async function submit(e){
+    e.preventDefault();
+    try{
+        const data = {
+          TodayPurchase:todayPurchase,
+          Bundle:bundle,
+          PointRate:pointRate,
+          Starch:starch,
+          Thappi:thappi,
+          Expensive:expensive,
+          Date:date};
+        console.log(data)
+        await fetch("http://localhost:8000/admin/manage",{
+          body : JSON.stringify(data),
+          method : "POST",
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }
+        ).then((response) => response.json())
+        .then((data) =>{
+          console.log(data)
+          if(data==="done")
+        {
+          // navigate('/man')
+        }
+
+        });
+        
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+
+  function change(e){
+    setpointRate(e.target.value)
+    let vv=(bundle)/80
+    let str=(bundle)/4.1
+    let exp=bundle*300
+    // console.log(typeof(vv))
+    setthappi(vv)
+    setstarch(str)
+    setexpensive(exp)
+    console.log(date)
+  }
   const navigate=useNavigate()
 
   const { window } = props;
@@ -54,28 +110,28 @@ export default function Starchside(props) {
       </Toolbar>
       <Divider />
       <List>
-        <ListItemButton onClick={()=>navigate('/admin/manage')}>
-          <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
-          </ListItemIcon>
-          <ListItemText >Managing</ListItemText>
-        </ListItemButton>
-        <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
-          <ListItemIcon>
-          <ListItemIcon  ><InboxIcon /> </ListItemIcon>
-          </ListItemIcon>
-          <ListItemText >FeedBack</ListItemText>
-        </ListItemButton>
-        <ListItemButton style={{backgroundColor:"black"}} >
+        <ListItemButton onClick={()=>navigate('/admin/manage')} style={{backgroundColor:"black"}}>
           <ListItemIcon>
           <ListItemIcon style={{color:"white"}}><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText style={{color:"white"}} id="basic-button"
+          <ListItemText style={{color:"white"}} >Managing</ListItemText>
+        </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
+          <ListItemIcon>
+          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>FeedBack</ListItemText>
+        </ListItemButton>
+        <ListItemButton >
+          <ListItemIcon>
+          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}>
-                Starch Request 
+                Product Request 
               </ListItemText>
           <Menu
               id="basic-menu"
@@ -85,7 +141,7 @@ export default function Starchside(props) {
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
               }}>
-                <MenuItem style={{backgroundColor:"black",color:"white"}} onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
+                <MenuItem onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
@@ -118,8 +174,9 @@ export default function Starchside(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Starch request
+            Today Update
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <Box
@@ -160,40 +217,44 @@ export default function Starchside(props) {
       >
         <Toolbar />
         <Typography paragraph>
-        <div> 
-            <table >
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Number</th>
-                <th>Quantity</th>
-                <th>Comment</th>
-                <th>Purpose</th>
-                <th>Message</th>
-                <th>Delete</th>
-              </tr>
-              {props.data.map(i=>{
-                return(
-                  <tr>
-                    <td>{i.name}</td>
-                    <td>{i.email}</td>
-                    <td>{i.number}</td>
-                    <td>{i.Quantity}</td>
-                    <td>{i.Purpose}</td>
-                    <td>{i.comment}</td>
-                    <td><Button value={i.name} variant="success">Message</Button></td>
-                    <td><Button value={i.name} variant="danger">Delete</Button></td>
-                  </tr>
-                )
-              })}
-            </table>
-            
-        </div>
+          <Row>
+            <Col md={2}></Col>
+            <Col md={6}>
+                <div style={{boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",textAlign:"center",paddingTop:'2vh',paddingBottom:'2vh'}}>
+                    <img src={form_img} alt='form_img' style={{width:"70%"}}/>
+                    <div >
+                        <form >
+                        <Box
+                            component="form"
+                            sx={{
+                                '& > :not(style)': { m: 1, width: '47ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                            >
+                            <TextField id="outlined-basic" onChange={(e)=>settodayPurchase(e.target.value)} value={todayPurchase} label="Today_purchase" variant="outlined" />
+                            <TextField id="outlined-basic" onChange={(e)=>setbundle(e.target.value)} value={bundle} label="Bundle" variant="outlined" />
+                            <TextField id="outlined-basic" onChange={change} value={pointRate} label="Point_Rate" variant="outlined" />
+                            <TextField id="outlined-basic" onChange={(e)=>setstarch(e.target.value)} value={starch} label="Starch" variant="outlined" />
+                            <TextField id="outlined-basic" onChange={(e)=>setthappi(e.target.value)} value={thappi} label="Thappi" variant="outlined" />
+                            <TextField id="outlined-basic" onChange={(e)=>setexpensive(e.target.value)} value={expensive} label="Expensive" variant="outlined" />
+                            <input onChange={(e)=>setdate(e.target.value)} value={date} type='date'/>
+                            <Stack >
+                                <Button  onClick={submit} variant="contained">Next</Button>
+                            </Stack>
+                        </Box>
+                        </form>
+                    </div>
+                </div>
+            </Col>
+            <Col md={3}></Col>
+          </Row>
         </Typography>
         <Typography paragraph>
-          
+        
         </Typography>
       </Box>
     </Box>
   );
 }
+

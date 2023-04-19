@@ -54,7 +54,7 @@ export default function FeedBackSide(props) {
       </Toolbar>
       <Divider />
       <List>
-        <ListItemButton >
+        <ListItemButton onClick={()=>navigate('/admin/manage')}>
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
