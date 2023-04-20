@@ -40,9 +40,11 @@ export default function Mainside(props) {
   const [data1,setdata]=React.useState('')
   const [index,setindex]=React.useState(0)
   const [index1,setindex1]=React.useState(3)
+  const [index2,setindex2]=React.useState(4)
 
   async function editChange(e){
     try{
+      setindex2(0)
         const data = {Date:e.target.value};
         console.log(data)
         await fetch("http://localhost:8000/admin/edit",{
@@ -55,8 +57,19 @@ export default function Mainside(props) {
         ).then((response) => response.json())
         .then((data) =>{
           setdata(data.data)
-          console.log(data1)
+          console.log(data.data)
+          
+          settodayPurchase(data1[0].TodayPurchase);
+          setbundle(data1[0].Bundle)
+          setpointRate(data1[0].PointRate)
+          setstarch(data1[0].Starch)
+          setthappi(data1[0].Thappi)
+          setexpensive(data1[0].Expensive)
+          setstarchStock(data1[0].starchStock)
+          setthappiStock(data1[0].thappiStock)
+          settotalAmount(data1[0].totalAmount)
           setindex(1)
+          setindex1(4)
         });
         
     }
@@ -99,7 +112,7 @@ export default function Mainside(props) {
           console.log("data1")
           console.log(data1)
           setindex(0)
-          setindex1(4)
+          setindex2(5)
         })
       )
       
@@ -263,18 +276,18 @@ export default function Mainside(props) {
                 <th>Save</th>
               </tr>
               {data1.map(i=>{
-                    // {settodayPurchase("i.TodayPurchase)}
+                
                 return(
                 <>
-                  <td><input value={todayPurchase} placeholder={i.TodayPurchase} onChange={(e)=>settodayPurchase(e.target.value)}/></td>
-                  <td><input value={bundle} placeholder={i.Bundle} onChange={(e)=>setbundle(e.target.value)}/></td>
-                  <td><input value={pointRate} placeholder={i.PointRate} onChange={(e)=>setpointRate(e.target.value)}/></td>
-                  <td><input value={starch} placeholder={i.Starch} onChange={(e)=>setstarch(e.target.value)}/></td>
-                  <td><input value={thappi} placeholder={i.Thappi} onChange={(e)=>setthappi(e.target.value)}/></td>
-                  <td><input value={expensive} placeholder={i.Expensive} onChange={(e)=>setexpensive(e.target.value)}/></td>
-                  <td><input value={starchStock} placeholder={i.starchStock} onChange={(e)=>setstarchStock(e.target.value)}/></td>
-                  <td><input value={thappiStock} placeholder={i.thappiStock} onChange={(e)=>setthappiStock(e.target.value)}/></td>
-                  <td><input value={totalAmount} placeholder={i.totalAmount} onChange={(e)=>settotalAmount(e.target.value)}/></td>
+                  <td><input value={todayPurchase} onChange={(e)=>settodayPurchase(e.target.value)}/></td>
+                  <td><input value={bundle} onChange={(e)=>setbundle(e.target.value)}/></td>
+                  <td><input value={pointRate} onChange={(e)=>setpointRate(e.target.value)}/></td>
+                  <td><input value={starch}  onChange={(e)=>setstarch(e.target.value)}/></td>
+                  <td><input value={thappi}  onChange={(e)=>setthappi(e.target.value)}/></td>
+                  <td><input value={expensive}  onChange={(e)=>setexpensive(e.target.value)}/></td>
+                  <td><input value={starchStock} onChange={(e)=>setstarchStock(e.target.value)}/></td>
+                  <td><input value={thappiStock}  onChange={(e)=>setthappiStock(e.target.value)}/></td>
+                  <td><input value={totalAmount}  onChange={(e)=>settotalAmount(e.target.value)}/></td>
                   <td><Button value={i.Date} onClick={save} variant="success">Save</Button></td>
                   </>)
               })}
@@ -282,7 +295,7 @@ export default function Mainside(props) {
         </>:""}
 
         {index1===3?
-        <div> 
+        <div className='index1'> 
         <table >
           <tr>
             <th>TodayPurchase</th>
@@ -315,8 +328,10 @@ export default function Mainside(props) {
             )
           })}
         </table>
-    </div>:
-    <div> 
+    </div>:""}
+
+    {index2===5?
+    <div className='index2'> 
     <table >
       <tr>
         <th>TodayPurchase</th>
@@ -349,8 +364,9 @@ export default function Mainside(props) {
         )
       })}
     </table>
-  </div>
-        }
+  </div>:
+  ""
+  }
         </div>
         </Typography>
       </Box>
