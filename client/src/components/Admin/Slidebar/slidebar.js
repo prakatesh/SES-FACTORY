@@ -20,12 +20,40 @@ import MenuItem from '@mui/material/MenuItem';
 
 import {useNavigate} from 'react-router-dom'
 
-import {Col, Row} from 'react-bootstrap'
+import {Button, Col, Row} from 'react-bootstrap'
 
 const drawerWidth = 240;
 
 
 export default function ResponsiveDrawer(props) {
+
+  const [searchdate,setsearchdate]=React.useState('')
+  const [data1,setdata]=React.useState('')
+  const [index,setindex]=React.useState(0)
+
+  async function search()
+  {
+    try
+    {
+    const data={Date:searchdate}
+    await fetch("http://localhost:8000/admin/edit",{
+      body:JSON.stringify(data),
+    method:"post",
+    headers: {
+      'Content-type':'application/json; charset=UTF-8',
+    },
+    }).then((res)=>res.json())
+    .then((data)=>{
+        console.log(data.data)
+        setdata(data.data)
+        setindex(1)
+    })
+  }
+  catch(e)
+  {
+    console.log(e)
+  }
+  }
 
   const navigate=useNavigate()
 
@@ -206,6 +234,46 @@ export default function ResponsiveDrawer(props) {
           </div>
             </Col>
           </Row>
+        </Typography>
+        <Typography paragraph>
+          {index===0?
+          <>
+          <input style={{width:'230px',margin:'2vh'}} value={searchdate} onChange={(e)=>{setsearchdate(e.target.value)}} type='date'/>
+          <Button onClick={search}>Serach</Button>
+          </>:
+            <>
+            <h1>Edit</h1>
+            <table>
+                  <tr>
+                    <th>TodayPurchase</th>
+                    <th>Bundle</th>
+                    <th>PointRate</th>
+                    <th>Starch</th>
+                    <th>Thappi</th>
+                    <th>Expensive</th>
+                    <th>starchStock</th>
+                    <th>thappiStock</th>
+                    <th>totalAmount</th>
+                  </tr>
+                  {data1.map(i=>{
+                    
+                    return(
+                    <>
+                <td>{i.TodayPurchase}</td>
+                <td>{i.Bundle}</td>
+                <td>{i.PointRate}</td>
+                <td>{i.Starch}</td>
+                <td>{i.Thappi}</td>
+                <td>{i.Expensive}</td>
+                <td>{i.starchStock}</td>
+                <td>{i.thappiStock}</td>
+                <td>{i.totalAmount}</td>
+                      </>)
+                  })}
+            </table>
+           <Button onClick={()=>setindex(0)} variant="success">Okay</Button>
+            </>
+          }
         </Typography>
       </Box>
     </Box>
