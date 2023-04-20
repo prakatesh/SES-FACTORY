@@ -26,8 +26,88 @@ const drawerWidth = 240;
 
 export default function Mainside(props) {
 
+  const [todayPurchase,settodayPurchase]=React.useState('')
+  const [bundle,setbundle]=React.useState('')
+  const [pointRate,setpointRate]=React.useState('')
+  const [starch,setstarch]=React.useState('')
+  const [thappi,setthappi]=React.useState('')
+  // const [date,setdate]=React.useState('')
+  const [expensive,setexpensive]=React.useState('')
+  const [starchStock,setstarchStock]=React.useState('')
+  const [thappiStock,setthappiStock]=React.useState('')
+  const [totalAmount,settotalAmount]=React.useState('')
+  
+  const [data1,setdata]=React.useState('')
+  const [index,setindex]=React.useState(0)
+  const [index1,setindex1]=React.useState(3)
 
-
+  async function editChange(e){
+    try{
+        const data = {Date:e.target.value};
+        console.log(data)
+        await fetch("http://localhost:8000/admin/edit",{
+          body : JSON.stringify(data),
+          method:"post",
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }
+        ).then((response) => response.json())
+        .then((data) =>{
+          setdata(data.data)
+          console.log(data1)
+          setindex(1)
+        });
+        
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
+  async function save(e){
+    try{
+      const data = {
+        TodayPurchase:todayPurchase,
+        Bundle:bundle,
+        PointRate:pointRate,
+        Starch:starch,
+        Thappi:thappi,
+        Expensive:expensive,
+        starchStock:starchStock,
+        thappiStock:thappiStock,
+        totalAmount:totalAmount,
+        Date:e.target.value
+      };
+      console.log(data)
+      await fetch("http://localhost:8000/admin/update",{
+        body : JSON.stringify(data),
+        method:"put",
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }
+      ).then(
+        await fetch("http://localhost:8000/admin/data",{
+          method:"get",
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }
+        ).then((response) => response.json())
+        .then((data) =>{
+          setdata(data.data)
+          console.log("data1")
+          console.log(data1)
+          setindex(0)
+          setindex1(4)
+        })
+      )
+      
+  }
+  catch(e){
+    console.log(e)
+  }
+  }
   
   const navigate=useNavigate()
 
@@ -162,8 +242,14 @@ export default function Mainside(props) {
       >
         <Toolbar />
         <Typography paragraph>
-        <div> 
-            <table >
+        
+        </Typography>
+        <Typography paragraph>
+          <div>
+        {index===1?
+        <>
+        <h1>Edit</h1>
+        <table>
               <tr>
                 <th>TodayPurchase</th>
                 <th>Bundle</th>
@@ -171,35 +257,101 @@ export default function Mainside(props) {
                 <th>Starch</th>
                 <th>Thappi</th>
                 <th>Expensive</th>
-                <th>Date</th>
                 <th>starchStock</th>
                 <th>thappiStock</th>
                 <th>totalAmount</th>
-                <th>Edit</th>
+                <th>Save</th>
               </tr>
-              {props.data.map(i=>{
+              {data1.map(i=>{
+                    // {settodayPurchase("i.TodayPurchase)}
                 return(
-                  <tr>
-                    <td>{i.TodayPurchase}</td>
-                    <td>{i.Bundle}</td>
-                    <td>{i.PointRate}</td>
-                    <td>{i.Starch}</td>
-                    <td>{i.Thappi}</td>
-                    <td>{i.Expensive}</td>
-                    <td>{i.Date}</td>
-                    <td>{i.starchStock}</td>
-                    <td>{i.thappiStock}</td>
-                    <td>{i.totalAmount}</td>
-                    <td><Button value={i.name} variant="success">Edit</Button></td>
-                  </tr>
-                )
+                <>
+                  <td><input value={todayPurchase} placeholder={i.TodayPurchase} onChange={(e)=>settodayPurchase(e.target.value)}/></td>
+                  <td><input value={bundle} placeholder={i.Bundle} onChange={(e)=>setbundle(e.target.value)}/></td>
+                  <td><input value={pointRate} placeholder={i.PointRate} onChange={(e)=>setpointRate(e.target.value)}/></td>
+                  <td><input value={starch} placeholder={i.Starch} onChange={(e)=>setstarch(e.target.value)}/></td>
+                  <td><input value={thappi} placeholder={i.Thappi} onChange={(e)=>setthappi(e.target.value)}/></td>
+                  <td><input value={expensive} placeholder={i.Expensive} onChange={(e)=>setexpensive(e.target.value)}/></td>
+                  <td><input value={starchStock} placeholder={i.starchStock} onChange={(e)=>setstarchStock(e.target.value)}/></td>
+                  <td><input value={thappiStock} placeholder={i.thappiStock} onChange={(e)=>setthappiStock(e.target.value)}/></td>
+                  <td><input value={totalAmount} placeholder={i.totalAmount} onChange={(e)=>settotalAmount(e.target.value)}/></td>
+                  <td><Button value={i.Date} onClick={save} variant="success">Save</Button></td>
+                  </>)
               })}
-            </table>
-            
+        </table>
+        </>:""}
+
+        {index1===3?
+        <div> 
+        <table >
+          <tr>
+            <th>TodayPurchase</th>
+            <th>Bundle</th>
+            <th>PointRate</th>
+            <th>Starch</th>
+            <th>Thappi</th>
+            <th>Expensive</th>
+            <th>Date</th>
+            <th>starchStock</th>
+            <th>thappiStock</th>
+            <th>totalAmount</th>
+            <th>Edit</th>
+          </tr>
+          {props.data.map(i=>{
+            return(
+              <tr>
+                <td>{i.TodayPurchase}</td>
+                <td>{i.Bundle}</td>
+                <td>{i.PointRate}</td>
+                <td>{i.Starch}</td>
+                <td>{i.Thappi}</td>
+                <td>{i.Expensive}</td>
+                <td>{i.Date}</td>
+                <td>{i.starchStock}</td>
+                <td>{i.thappiStock}</td>
+                <td>{i.totalAmount}</td>
+                <td><Button value={i.Date} onClick={editChange} variant="success">Edit</Button></td>
+              </tr>
+            )
+          })}
+        </table>
+    </div>:
+    <div> 
+    <table >
+      <tr>
+        <th>TodayPurchase</th>
+        <th>Bundle</th>
+        <th>PointRate</th>
+        <th>Starch</th>
+        <th>Thappi</th>
+        <th>Expensive</th>
+        <th>Date</th>
+        <th>starchStock</th>
+        <th>thappiStock</th>
+        <th>totalAmount</th>
+        <th>Edit</th>
+      </tr>
+      {data1.map(i=>{
+        return(
+          <tr>
+            <td>{i.TodayPurchase}</td>
+            <td>{i.Bundle}</td>
+            <td>{i.PointRate}</td>
+            <td>{i.Starch}</td>
+            <td>{i.Thappi}</td>
+            <td>{i.Expensive}</td>
+            <td>{i.Date}</td>
+            <td>{i.starchStock}</td>
+            <td>{i.thappiStock}</td>
+            <td>{i.totalAmount}</td>
+            <td><Button value={i.Date} onClick={editChange} variant="success">Edit</Button></td>
+          </tr>
+        )
+      })}
+    </table>
+  </div>
+        }
         </div>
-        </Typography>
-        <Typography paragraph>
-        
         </Typography>
       </Box>
     </Box>

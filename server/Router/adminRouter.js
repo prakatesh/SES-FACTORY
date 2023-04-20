@@ -9,6 +9,9 @@ const {fetchsago}=require('../controllers/fetch/ProductRequest/fetchsago')
 const {fetchthappi}=require('../controllers/fetch/ProductRequest/fetchthappi')
 const {manage}=require('../controllers/Manage/controllerManage')
 const {fetchmanage}=require('../controllers/Manage/fetch/mainfetch')
+const {fetchedit}=require('../controllers/Manage/fetch/mainfetch')
+const {updatefetch}=require('../controllers/Manage/fetch/mainfetch')
+
 
 router.post('/signup',signUp)
 router.post('/login',Login)
@@ -18,5 +21,8 @@ router.get('/view/sago',fetchsago)
 router.get('/view/thappi',fetchthappi)
 router.post('/manage',manage)
 router.get('/data',fetchmanage)
+router.post('/edit',fetchedit)
+router.put('/update',updatefetch)
+
 
 module.exports=router
