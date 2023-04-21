@@ -35,7 +35,6 @@ export default function App() {
     <Route path="/dashboard" element={<ResponsiveDrawer/>}></Route>
     <Route path="/admin/manage" element={<Manageside1/>}></Route>
     <Route path="/admin/main" element={<MainData/>}></Route>
-    {/* <Route path="/admin/data" element={<Mainside/>}></Route> */}
     <Route path='/admin/view/feedback' element={<FeedBack/>}></Route>
     <Route path='/admin/view/starch' element={<StarchView/>}></Route>
     <Route path='/admin/view/sago' element={<SagoView/>}></Route>
