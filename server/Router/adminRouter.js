@@ -11,7 +11,7 @@ const {manage}=require('../controllers/Manage/controllerManage')
 const {fetchmanage}=require('../controllers/Manage/fetch/mainfetch')
 const {fetchedit}=require('../controllers/Manage/fetch/mainfetch')
 const {updatefetch}=require('../controllers/Manage/fetch/mainfetch')
-
+const {Purchase}=require('../controllers/DashBoard/controllerDashboard')
 
 router.post('/signup',signUp)
 router.post('/login',Login)
@@ -23,6 +23,7 @@ router.post('/manage',manage)
 router.get('/data',fetchmanage)
 router.post('/edit',fetchedit)
 router.put('/update',updatefetch)
+router.get('/dashboard/purchase',Purchase)
 
 
 module.exports=router
