@@ -27,6 +27,19 @@ const drawerWidth = 240;
 
 export default function FeedBackSide(props) {
 
+  const deleteFeedback = async (id) =>{
+    alert(id)
+    const response=await fetch(`http://localhost:8000/admin/delete/feedback/${id}`,{
+      method:"delete"
+  })
+  if(response.ok){
+    props.getdata();
+  }
+  else{
+    alert("Record not Deleted")
+  }
+  }
+
   // console.log(props.data)
   const navigate=useNavigate()
 
@@ -182,7 +195,7 @@ export default function FeedBackSide(props) {
                     <td>{i.number}</td>
                     <td>{i.comment}</td>
                     <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
-                    <td><Button value={i.name} variant="danger">Delete</Button></td>
+                    <td><Button value={i.name} onClick={()=>deleteFeedback(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )
               })}

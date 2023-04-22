@@ -26,6 +26,20 @@ const drawerWidth = 240;
 
 export default function Starchside(props) {
 
+  const deleteSago = async (id) =>{
+    alert(id)
+    const response=await fetch(`http://localhost:8000/admin/delete/sago/${id}`,{
+      method:"delete"
+  })
+  if(response.ok){
+    props.getdata();
+  }
+  else{
+    alert("Record not Deleted")
+  }
+  }
+
+
   // console.log(props.data)
   const navigate=useNavigate()
 
@@ -181,7 +195,7 @@ export default function Starchside(props) {
                     <td>{i.Purpose}</td>
                     <td>{i.comment}</td>
                     <td><Button value={i.name} variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
-                    <td><Button value={i.name} variant="danger">Delete</Button></td>
+                    <td><Button value={i.name} onClick={() => deleteSago(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )
               })}

@@ -12,6 +12,10 @@ const {fetchmanage}=require('../controllers/Manage/fetch/mainfetch')
 const {fetchedit}=require('../controllers/Manage/fetch/mainfetch')
 const {updatefetch}=require('../controllers/Manage/fetch/mainfetch')
 const {Purchase}=require('../controllers/DashBoard/controllerDashboard')
+const {deleteSago}=require('../controllers/delete/ProductDelete/deleteSago')
+const {deleteStarch}=require('../controllers/delete/ProductDelete/deleteStarch')
+// const {deletethappi}=require('../controllers/delete/ProductDelete/deleteThappi')
+// const {deleteFeedback}=require('../controllers/delete/deleteFeedback')
 
 router.post('/signup',signUp)
 router.post('/login',Login)
@@ -24,6 +28,9 @@ router.get('/data',fetchmanage)
 router.post('/edit',fetchedit)
 router.put('/update',updatefetch)
 router.get('/dashboard',Purchase)
-
+router.delete('/delete/sago/:id',deleteSago)
+router.delete('/delete/starch/:id',deleteStarch)
+// router.delete('/delete/thappi/:id',deletethappi)
+// router.delete('/delete/feedback/:id',deleteFeedback)
 
 module.exports=router

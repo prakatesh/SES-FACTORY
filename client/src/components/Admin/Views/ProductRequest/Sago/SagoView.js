@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react'
 import Starchside from './Sagoside'
 function SagoView() {
     const [data,setdata]=useState([])
-useEffect(()=>{
-    fetch("http://localhost:8000/admin/view/sago",{
+
+    const getdata = async () => {
+        await fetch("http://localhost:8000/admin/view/sago",{
         method:"get"
     }).then((res)=>res.json())
     .then((data)=>{
         // console.log(data.data)
+        console.log(data)
         setdata(data.data)
     })
+    }
+    
+useEffect(()=>{
+    getdata();
 },[])
 return (
     <div>
 
-          <Starchside data={data}/>
+          <Starchside data={data} getdata={getdata}/>
         
     </div>
 )

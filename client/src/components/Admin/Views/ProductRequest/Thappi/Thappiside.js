@@ -27,6 +27,20 @@ const drawerWidth = 240;
 
 export default function Thappiside(props) {
 
+  const deleteThappi = async (id) =>{
+    alert(id)
+    const response=await fetch(`http://localhost:8000/admin/delete/thappi/${id}`,{
+      method:"delete"
+  })
+  if(response.ok){
+    props.getdata();
+  }
+  else{
+    alert("Record not Deleted")
+  }
+  }
+
+
   // console.log(props.data)
   const navigate=useNavigate()
 
@@ -182,7 +196,7 @@ export default function Thappiside(props) {
                     <td>{i.Purpose}</td>
                     <td>{i.comment}</td>
                     <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
-                    <td><Button value={i.name} variant="danger">Delete</Button></td>
+                    <td><Button value={i.name} onClick={() => deleteThappi(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )
               })}
