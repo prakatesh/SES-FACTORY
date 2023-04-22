@@ -23,7 +23,7 @@ router.post('/manage',manage)
 router.get('/data',fetchmanage)
 router.post('/edit',fetchedit)
 router.put('/update',updatefetch)
-router.get('/dashboard/purchase',Purchase)
+router.get('/dashboard',Purchase)
 
 
 module.exports=router

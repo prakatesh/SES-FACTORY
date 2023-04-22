@@ -27,6 +27,18 @@ const drawerWidth = 240;
 
 export default function ResponsiveDrawer(props) {
 
+  const [array,setarry]=React.useState([])
+
+  React.useEffect(()=>{
+    fetch("http://localhost:8000/admin/dashboard",{
+        method:"get"
+    }).then((res)=>res.json())
+    .then((data)=>{
+        // console.log(data.data)
+        setarry(data.data)
+    })
+  },[])
+
   const [searchdate,setsearchdate]=React.useState('')
   const [data1,setdata]=React.useState('')
   const [index,setindex]=React.useState(0)
@@ -195,7 +207,7 @@ export default function ResponsiveDrawer(props) {
             Today Purchase
             </div>
             <div style={{fontWeight:"500"}}>
-              5,00,000
+            {array[0]}
             </div>
           </div>
             </Col>
@@ -205,7 +217,7 @@ export default function ResponsiveDrawer(props) {
             Sales
             </div>
             <div style={{fontWeight:"500"}}>
-              5,00,000
+              {array[1]}
             </div>
           </div>
             </Col>
@@ -215,7 +227,7 @@ export default function ResponsiveDrawer(props) {
             Profite/Loss
             </div>
             <div style={{fontWeight:"500"}}>
-              5,00,000
+            {array[3]}
             </div>
           </div>
             </Col>
@@ -229,7 +241,7 @@ export default function ResponsiveDrawer(props) {
             InStock
             </div>
             <div style={{fontWeight:"500"}}>
-              5,00,000
+              {array[2]}
             </div>
           </div>
             </Col>
