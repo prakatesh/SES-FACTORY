@@ -181,7 +181,7 @@ export default function FeedBackSide(props) {
                     <td>{i.city}</td>
                     <td>{i.number}</td>
                     <td>{i.comment}</td>
-                    <td><Button value={i.name} variant="success">Message</Button></td>
+                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
                     <td><Button value={i.name} variant="danger">Delete</Button></td>
                   </tr>
                 )
