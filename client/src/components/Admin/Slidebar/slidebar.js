@@ -202,7 +202,7 @@ export default function ResponsiveDrawer(props) {
         <Typography paragraph>
           <Row>
             <Col md={4}>
-            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"yellow",padding:"5vh"}}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#F9B115",padding:"5vh"}}>
             <div style={{fontWeight:"bolder"}}>
             Today Purchase
             </div>
@@ -212,7 +212,7 @@ export default function ResponsiveDrawer(props) {
           </div>
             </Col>
             <Col md={4}>
-            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"blue",padding:"5vh"}}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#E55353",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
             Sales
             </div>
@@ -222,7 +222,7 @@ export default function ResponsiveDrawer(props) {
           </div>
             </Col>
             <Col md={4}>
-            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"green",padding:"5vh"}}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#3399FF",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
             Profite/Loss
             </div>
@@ -251,7 +251,7 @@ export default function ResponsiveDrawer(props) {
           {index===0?
           <>
           <input style={{width:'230px',margin:'2vh'}} value={searchdate} onChange={(e)=>{setsearchdate(e.target.value)}} type='date'/>
-          <Button onClick={search}>Serach</Button>
+          <Button onClick={search}>Search</Button>
           </>:
             <>
             <h1>Edit</h1>
