@@ -1,5 +1,5 @@
 const contactModel=require('../../../server/model/contacts')
-exports.deleteStarch=async(req,res)=>
+exports.deleteFeedback=async(req,res)=>
 {
     try{
         const id=req.params.id

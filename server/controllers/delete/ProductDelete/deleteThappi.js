@@ -1,5 +1,5 @@
 const thappiModel=require('../../../model/thappiOrder')
-exports.deleteStarch=async(req,res)=>
+exports.deleteThappi=async(req,res)=>
 {
     try{
         const id=req.params.id
