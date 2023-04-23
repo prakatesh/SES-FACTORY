@@ -310,7 +310,7 @@ export default function Mainside(props) {
             <th>totalAmount</th>
             <th>Edit</th>
           </tr>
-          {props.data.map(i=>{
+          {props.data.map((i,index)=>{
             return(
               <tr>
                 <td>{i.TodayPurchase}</td>

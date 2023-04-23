@@ -11,22 +11,6 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// app.get('/sal',(req,res)=>{
-//     var sum=0
-//     manageModel.find({})
-
-//     .then((data)=>{
-//         for(i of data)
-//         {
-//             sum=sum+i.TodayPurchase
-//         }
-//         console.log(sum)
-//         res.json({sum:sum})
-//         // console.log(data) 
-//     })
-    
-
-// })
 
 app.use('/user',userRouter)
 app.use('/admin',adminRouter)
