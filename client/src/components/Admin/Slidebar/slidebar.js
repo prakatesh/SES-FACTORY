@@ -88,9 +88,11 @@ export default function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Toolbar style={{fontWeight:"700"}}>
+<button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
+      <Toolbar>
         DashBoard
       </Toolbar>
+      </button>
       <Divider />
       <List>
         <ListItemButton onClick={()=>navigate('/admin/manage')}>

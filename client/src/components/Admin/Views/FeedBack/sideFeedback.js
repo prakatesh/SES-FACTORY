@@ -62,9 +62,11 @@ export default function FeedBackSide(props) {
 
   const drawer = (
     <div>
-      <Toolbar style={{fontWeight:"700"}}>
+    <button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
+      <Toolbar>
         DashBoard
       </Toolbar>
+      </button>
       <Divider />
       <List>
         <ListItemButton onClick={()=>navigate('/admin/manage')}>
@@ -194,7 +196,7 @@ export default function FeedBackSide(props) {
                     <td>{i.city}</td>
                     <td>{i.number}</td>
                     <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
+                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Messages</a></Button></td>
                     <td><Button value={i.name} onClick={()=>deleteFeedback(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )
