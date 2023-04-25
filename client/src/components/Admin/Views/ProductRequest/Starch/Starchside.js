@@ -14,6 +14,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Button from 'react-bootstrap/Button';
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FactoryIcon from '@mui/icons-material/Factory';
+
 // import style from '../../../../assets/Styles/FeedBack/feedback.module.css';
 
 import Menu from '@mui/material/Menu';
@@ -65,7 +70,8 @@ export default function Starchside(props) {
     <div>
       <button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
       <Toolbar>
-        DashBoard
+      <FactoryIcon/>
+      &nbsp;&nbsp;DashBoard
       </Toolbar>
       </button>
       <Divider />
@@ -74,17 +80,23 @@ export default function Starchside(props) {
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
+          <ListItemText >Add Purchase</ListItemText>
+        </ListItemButton>
+        <ListItemButton onClick={()=>navigate('/admin/main')}>
+          <ListItemIcon>
+          <ListItemIcon><ManageAccountsIcon />  </ListItemIcon>
+          </ListItemIcon>
           <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon  ><InboxIcon /> </ListItemIcon>
+          <ListItemIcon  ><RateReviewIcon /></ListItemIcon>
           </ListItemIcon>
           <ListItemText >FeedBack</ListItemText>
         </ListItemButton>
         <ListItemButton style={{backgroundColor:"black"}} >
           <ListItemIcon>
-          <ListItemIcon style={{color:"white"}}><InboxIcon /> </ListItemIcon>
+          <ListItemIcon style={{color:"white"}}><ShoppingCartIcon /> </ListItemIcon>
           </ListItemIcon>
           <ListItemText style={{color:"white"}} id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}

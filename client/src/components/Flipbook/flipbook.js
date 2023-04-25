@@ -10,7 +10,7 @@ export default function Flipbook() {
     <Col md={2}>
     </Col>
     <Col md={8}>
-    <iframe width='100%' style={{marginTop:"30px"}} height='750vh' src="https://online.fliphtml5.com/rxird/eysj/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" title="myFrame" ></iframe>
+    <iframe width='100%' style={{marginTop:"30px"}} height='750vh' src="https://online.fliphtml5.com/rxird/msrf/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" title="myFrame" ></iframe>
   </Col>
     <Col md={2}>
     </Col>

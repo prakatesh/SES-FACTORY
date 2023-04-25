@@ -13,6 +13,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FactoryIcon from '@mui/icons-material/Factory';
+
 
 
 import Menu from '@mui/material/Menu';
@@ -75,9 +80,9 @@ export default function Manageside1(props) {
 
   function change(e){
     setpointRate(e.target.value)
-    let vv=(bundle)/80
-    let str=(bundle)/4.1
-    let exp=bundle*300
+    let vv=Math.round((bundle)/80)
+    let str=Math.round((bundle)/4.1)
+    let exp=Math.round(bundle*300)
     // console.log(typeof(vv))
     setthappi(vv)
     setstarch(str)
@@ -107,6 +112,7 @@ export default function Manageside1(props) {
     <div>
       <button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
       <Toolbar>
+      <FactoryIcon/> &nbsp;&nbsp;
         DashBoard
       </Toolbar>
       </button>
@@ -116,17 +122,23 @@ export default function Manageside1(props) {
           <ListItemIcon>
           <ListItemIcon style={{color:"white"}}><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText style={{color:"white"}} >Managing</ListItemText>
+          <ListItemText style={{color:"white"}} >Add Purchase</ListItemText>
+        </ListItemButton>
+        <ListItemButton onClick={()=>navigate('/admin/main')}>
+          <ListItemIcon>
+          <ListItemIcon><ManageAccountsIcon />  </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          <ListItemIcon><RateReviewIcon /> </ListItemIcon>
           </ListItemIcon>
           <ListItemText>FeedBack</ListItemText>
         </ListItemButton>
         <ListItemButton >
           <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          <ListItemIcon><ShoppingCartIcon /> </ListItemIcon>
           </ListItemIcon>
           <ListItemText id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}

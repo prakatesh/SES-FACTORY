@@ -13,6 +13,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FactoryIcon from '@mui/icons-material/Factory';
+
 
 
 import Menu from '@mui/material/Menu';
@@ -90,6 +95,7 @@ export default function ResponsiveDrawer(props) {
     <div>
 <button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
       <Toolbar>
+      <FactoryIcon/> &nbsp;&nbsp;
         DashBoard
       </Toolbar>
       </button>
@@ -99,17 +105,23 @@ export default function ResponsiveDrawer(props) {
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
+          <ListItemText >Add Purchase</ListItemText>
+        </ListItemButton>
+        <ListItemButton onClick={()=>navigate('/admin/main')}>
+          <ListItemIcon>
+          <ListItemIcon><ManageAccountsIcon />  </ListItemIcon>
+          </ListItemIcon>
           <ListItemText >Managing</ListItemText>
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          <ListItemIcon><RateReviewIcon /> </ListItemIcon>
           </ListItemIcon>
           <ListItemText>FeedBack</ListItemText>
         </ListItemButton>
         <ListItemButton >
           <ListItemIcon>
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
+          <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
           </ListItemIcon>
           <ListItemText id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -206,7 +218,7 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#F9B115",padding:"5vh"}}>
             <div style={{fontWeight:"bolder"}}>
-            Today Purchase
+            Purchase
             </div>
             <div style={{fontWeight:"500"}}>
             {array[0]}
@@ -216,7 +228,7 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#E55353",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            Sales
+            Total
             </div>
             <div style={{fontWeight:"500"}}>
               {array[1]}
@@ -226,10 +238,10 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#3399FF",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            Profite/Loss
+            Saled
             </div>
             <div style={{fontWeight:"500"}}>
-            {array[3]}
+            {array[2]}
             </div>
           </div>
             </Col>
@@ -243,7 +255,17 @@ export default function ResponsiveDrawer(props) {
             InStock
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[2]}
+              {array[3]}
+            </div>
+          </div>
+            </Col>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"lightgreen",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Profit/Loss
+            </div>
+            <div style={{fontWeight:"500"}}>
+              {array[4]}
             </div>
           </div>
             </Col>
