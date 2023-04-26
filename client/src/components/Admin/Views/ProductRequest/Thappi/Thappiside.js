@@ -212,7 +212,7 @@ export default function Thappiside(props) {
                     <td>{i.Quantity}</td>
                     <td>{i.Purpose}</td>
                     <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
+                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></td>
                     <td><Button value={i.name} onClick={() => deleteThappi(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )

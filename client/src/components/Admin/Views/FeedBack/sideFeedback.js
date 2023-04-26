@@ -208,7 +208,7 @@ export default function FeedBackSide(props) {
                     <td>{i.city}</td>
                     <td>{i.number}</td>
                     <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Messages</a></Button></td>
+                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></td>
                     <td><Button value={i.name} onClick={()=>deleteFeedback(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )

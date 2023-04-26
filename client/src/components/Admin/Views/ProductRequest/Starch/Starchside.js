@@ -209,7 +209,7 @@ export default function Starchside(props) {
                     <td>{i.Quantity}</td>
                     <td>{i.Purpose}</td>
                     <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href="https://mail.google.com/">Messages</a></Button></td>
+                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></td>
                     <td><Button value={i.name} onClick={() => deleteStarch(i._id)} variant="danger">Delete</Button></td>
                   </tr>
                 )
