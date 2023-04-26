@@ -30,6 +30,7 @@ function Signup() {
       if(data==="done")
     {
       console.log("object")
+      window.location="/admin/login"
     }
     });
 
