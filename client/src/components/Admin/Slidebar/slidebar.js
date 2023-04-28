@@ -17,7 +17,8 @@ import RateReviewIcon from '@mui/icons-material/RateReview';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FactoryIcon from '@mui/icons-material/Factory';
-
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 
 import Menu from '@mui/material/Menu';
@@ -107,6 +108,12 @@ export default function ResponsiveDrawer(props) {
           </ListItemIcon>
           <ListItemText >Add Purchase</ListItemText>
         </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/sale')}>
+          <ListItemIcon>
+          <ListItemIcon><ArrowCircleUpIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sale Product</ListItemText>
+        </ListItemButton>
         <ListItemButton onClick={()=>navigate('/admin/main')}>
           <ListItemIcon>
           <ListItemIcon><ManageAccountsIcon />  </ListItemIcon>
@@ -142,6 +149,12 @@ export default function ResponsiveDrawer(props) {
                 <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
+        </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/view/soldout')}>
+          <ListItemIcon>
+          <ListItemIcon><CurrencyRupeeIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sold Out</ListItemText>
         </ListItemButton>
       </List>
       <Divider />
@@ -218,7 +231,7 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#F9B115",padding:"5vh"}}>
             <div style={{fontWeight:"bolder"}}>
-            Purchase
+            Purchase cost
             </div>
             <div style={{fontWeight:"500"}}>
             {array[0]}
@@ -228,7 +241,7 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#E55353",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            Total
+            Expense cost
             </div>
             <div style={{fontWeight:"500"}}>
               {array[1]}
@@ -236,9 +249,9 @@ export default function ResponsiveDrawer(props) {
           </div>
             </Col>
             <Col md={4}>
-            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#3399FF",padding:"5vh"}}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#AF1763",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            Saled
+            Total Cost
             </div>
             <div style={{fontWeight:"500"}}>
             {array[2]}
@@ -250,9 +263,9 @@ export default function ResponsiveDrawer(props) {
         <Typography paragraph>
         <Row>
           <Col md={4}>
-            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"silver",padding:"5vh"}}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#0DCAF0",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            InStock
+            Total Tons
             </div>
             <div style={{fontWeight:"500"}}>
               {array[3]}
@@ -262,10 +275,44 @@ export default function ResponsiveDrawer(props) {
             <Col md={4}>
             <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"lightgreen",padding:"5vh"}}>
             <div style={{fontWeight:"700"}}>
-            Profit/Loss
+            Saled tons
             </div>
             <div style={{fontWeight:"500"}}>
               {array[4]}
+            </div>
+          </div>
+            </Col>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"lightpink",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Instock tons
+            </div>
+            <div style={{fontWeight:"500"}}>
+              {array[5]}
+            </div>
+          </div>
+            </Col>
+          </Row>
+        </Typography>
+        <Typography paragraph>
+        <Row>
+          <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"lightyellow",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Sold Out
+            </div>
+            <div style={{fontWeight:"500"}}>
+              {array[6]}
+            </div>
+          </div>
+            </Col>
+            <Col md={4}>
+            <div style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",backgroundColor:"#A05AFF",padding:"5vh"}}>
+            <div style={{fontWeight:"700"}}>
+            Profit/Loss
+            </div>
+            <div style={{fontWeight:"500"}}>
+              {array[7]}
             </div>
           </div>
             </Col>

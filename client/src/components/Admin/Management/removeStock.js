@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,7 +14,6 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import Button from 'react-bootstrap/Button';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -21,34 +21,68 @@ import FactoryIcon from '@mui/icons-material/Factory';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
-// import style from '../../../../assets/Styles/FeedBack/feedback.module.css';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-
 import {useNavigate} from 'react-router-dom'
+
+import {Col, Row, Stack} from 'react-bootstrap'
+
+import form_img from '../../../assets/Images/Admin/form.jpg'
+import { Button, TextField } from '@mui/material';
 
 const drawerWidth = 240;
 
 
-export default function Starchside(props) {
+export default function RemoveStock(props) {
 
-  const deleteStarch = async (id) =>{
-    alert(id)
-    const response=await fetch(`http://localhost:8000/admin/delete/starch/${id}`,{
-      method:"delete"
-  })
-  if(response.ok){
-    props.getdata();
-  }
-  else{
-    alert("Record not Deleted")
-  }
+  const [amount,setamount]=React.useState('')
+  const [total,settotal]=React.useState('')
+  const [name,setname]=React.useState('')
+  const [tons,settons]=React.useState('')
+  const [product,setproduct]=React.useState('')
+  const [date,setdate]=React.useState('')
+
+  async function submit(e){
+    e.preventDefault();
+    try{
+        const data = {
+          name:name,
+          product:product,
+          tons:tons,
+          amount:amount,
+          total:total,
+          date:date};
+        console.log(data)
+        await fetch("http://localhost:8000/admin/clearstock",{
+          body : JSON.stringify(data),
+          method : "post",
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        }
+        ).then((response) => response.json())
+        .then((data) =>{
+          console.log(data)
+          if(data==="done")
+        {
+          navigate('/dashboard')
+        }
+
+        });
+        
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
+  useEffect(() => {
+    settotal(amount*tons);
+  }, [amount,tons])
+  
 
-  // console.log(props.data)
   const navigate=useNavigate()
 
   const { window } = props;
@@ -72,23 +106,23 @@ export default function Starchside(props) {
     <div>
       <button onClick={()=>navigate('/dashboard')} style={{fontWeight:"700" , width:"100%"}} >
       <Toolbar>
-      <FactoryIcon/>
-      &nbsp;&nbsp;DashBoard
+      <FactoryIcon/> &nbsp;&nbsp;
+        DashBoard
       </Toolbar>
       </button>
       <Divider />
       <List>
-        <ListItemButton onClick={()=>navigate('/admin/manage')}>
+        <ListItemButton onClick={()=>navigate('/admin/manage')} >
           <ListItemIcon>
           <ListItemIcon><InboxIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >Add Purchase</ListItemText>
+          <ListItemText  >Add Purchase</ListItemText>
         </ListItemButton>
-        <ListItemButton  onClick={()=>navigate('/admin/sale')}>
+        <ListItemButton  onClick={()=>navigate('/admin/sale')} style={{backgroundColor:"black"}}>
           <ListItemIcon>
-          <ListItemIcon><ArrowCircleUpIcon /> </ListItemIcon>
+          <ListItemIcon style={{color:"white"}}><ArrowCircleUpIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText>Sale Product</ListItemText>
+          <ListItemText style={{color:"white"}}>Sale Product</ListItemText>
         </ListItemButton>
         <ListItemButton onClick={()=>navigate('/admin/main')}>
           <ListItemIcon>
@@ -98,20 +132,20 @@ export default function Starchside(props) {
         </ListItemButton>
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
-          <ListItemIcon  ><RateReviewIcon /></ListItemIcon>
+          <ListItemIcon><RateReviewIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText >FeedBack</ListItemText>
+          <ListItemText>FeedBack</ListItemText>
         </ListItemButton>
-        <ListItemButton style={{backgroundColor:"black"}} >
+        <ListItemButton >
           <ListItemIcon>
-          <ListItemIcon style={{color:"white"}}><ShoppingCartIcon /> </ListItemIcon>
+          <ListItemIcon><ShoppingCartIcon /> </ListItemIcon>
           </ListItemIcon>
-          <ListItemText style={{color:"white"}} id="basic-button"
+          <ListItemText id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}>
-                Starch Request 
+                Product Request 
               </ListItemText>
           <Menu
               id="basic-menu"
@@ -121,7 +155,7 @@ export default function Starchside(props) {
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
               }}>
-                <MenuItem style={{backgroundColor:"black",color:"white"}} onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
+                <MenuItem onClick={()=>navigate('/admin/view/starch')} >Starch</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
@@ -132,6 +166,8 @@ export default function Starchside(props) {
           </ListItemIcon>
           <ListItemText>Sold Out</ListItemText>
         </ListItemButton>
+
+
       </List>
       <Divider />
     </div>
@@ -160,8 +196,9 @@ export default function Starchside(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Starch request
+            Today Update
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <Box
@@ -201,41 +238,58 @@ export default function Starchside(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
+        
         <Typography paragraph>
-        <div> 
-            <table >
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Number</th>
-                <th>Quantity</th>
-                <th>Comment</th>
-                <th>Purpose</th>
-                <th>Message</th>
-                <th>Delete</th>
-              </tr>
-              {props.data.map(i=>{
-                return(
-                  <tr>
-                    <td>{i.name}</td>
-                    <td>{i.email}</td>
-                    <td>{i.number}</td>
-                    <td>{i.Quantity}</td>
-                    <td>{i.Purpose}</td>
-                    <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></td>
-                    <td><Button value={i.name} onClick={() => deleteStarch(i._id)} variant="danger">Delete</Button></td>
-                  </tr>
-                )
-              })}
-            </table>
-            
-        </div>
+        <Row>
+        <Col md={3}></Col>
+        <Col md={7}>
+        <div style={{boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",textAlign:"center",paddingTop:'2vh',paddingBottom:'2vh'}}>
+        <img src={form_img} alt='form_img' style={{width:"70%"}}/>
+        <div ><br/>
+        <form >
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 2, width: '47ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+<TextField id="outlined-basic" onChange={(e)=>setname(e.target.value)} value={name} label="Customer Name" variant="outlined" /><br/>
+
+<select className="form-select d-inline-flex p-2" required 
+                onChange={(e) => {
+                  setproduct(e.target.value);
+                }}
+              >
+                <option value="product" disabled selected>
+                  Product
+                </option>
+                <option value="Starch">Tapico Starch</option>
+                <option value="Thappi">Tapico Waste</option>
+              </select>
+              <TextField id="outlined-basic" onChange={(e)=>settons(e.target.value)} value={tons} label="Tons Saleout" variant="outlined" /><br/>
+              <TextField id="outlined-basic" onChange={(e)=>setamount(e.target.value)}  value={amount} label="Amount Per Ton" variant="outlined" /><br/>
+              <TextField id="outlined-basic" onChange={(e)=>settotal(e.target.value)} value={total} label="Total Amount" variant="outlined" /><br/>
+              <TextField id="outlined-basic" onChange={(e)=>setdate(e.target.value)} value={date}  variant="outlined" type='date'/><br/>
+                                          
+                        <Stack >
+                            <Button onClick={submit} variant="contained">Saled</Button>
+                            
+                        </Stack>
+    </Box>
+    </form>
+    </div>
+    </div>
+        </Col>
+        </Row>
+        
         </Typography>
         <Typography paragraph>
-          
+        
         </Typography>
       </Box>
     </Box>
   );
 }
+

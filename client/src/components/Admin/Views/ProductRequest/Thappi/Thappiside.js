@@ -18,6 +18,8 @@ import RateReviewIcon from '@mui/icons-material/RateReview';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FactoryIcon from '@mui/icons-material/Factory';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 // import DashboardIcon from '@mui/icons-material/Dashboard';
 // import WidgetsIcon from '@mui/icons-material/Widgets';
 // import GridViewIcon from '@mui/icons-material/GridView';
@@ -85,12 +87,19 @@ export default function Thappiside(props) {
           </ListItemIcon>
           <ListItemText >Add Purchase</ListItemText>
         </ListItemButton>
+        <ListItemButton onClick={()=>navigate('/admin/sale')}>
+          <ListItemIcon>
+          <ListItemIcon><ArrowCircleUpIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sale Product</ListItemText>
+        </ListItemButton>
         <ListItemButton onClick={()=>navigate('/admin/main')}>
           <ListItemIcon>
           <ListItemIcon><ManageAccountsIcon /> </ListItemIcon>
           </ListItemIcon>
           <ListItemText >Managing</ListItemText>
-        </ListItemButton>
+          </ListItemButton>
+
         <ListItemButton  onClick={()=>navigate('/admin/view/feedback')}>
           <ListItemIcon>
           <ListItemIcon  ><RateReviewIcon /> </ListItemIcon>
@@ -120,6 +129,12 @@ export default function Thappiside(props) {
                 <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem style={{backgroundColor:"black",color:"white"}} onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
+        </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/view/soldout')}>
+          <ListItemIcon>
+          <ListItemIcon><CurrencyRupeeIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sold Out</ListItemText>
         </ListItemButton>
       </List>
       <Divider />

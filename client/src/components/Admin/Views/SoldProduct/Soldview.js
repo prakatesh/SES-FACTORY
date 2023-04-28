@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import FeedBackSide from './sideFeedback'
-function FeedBack() {
+import Soldside from './soldside'
+function Soldview() {
     const [data,setdata]=useState([])
 
     const getdata = async () =>{
-        fetch("http://localhost:8000/admin/view/feedback",{
+        fetch("http://localhost:8000/admin/view/soldout",{
             method:"get"
         }).then((res)=>res.json())
         .then((data)=>{
@@ -18,11 +18,11 @@ getdata();
 return (
     <div>
         <div>
-            <FeedBackSide data={data} getdata={getdata}/>
+            <Soldside data={data} getdata={getdata}/>
         </div>
         
     </div>
 )
 }
 
-export default FeedBack
+export default Soldview

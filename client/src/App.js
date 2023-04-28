@@ -18,6 +18,10 @@ import ThappiView from './components/Admin/Views/ProductRequest/Thappi/ThappiVie
 import Manageside1 from './components/Admin/Management/manageside1'
 // import Mainside from './components/Admin/Management/Main/MainSite'
 import MainData from './components/Admin/Management/Main/mainData'
+import RemoveStock from './components/Admin/Management/removeStock'
+import SoldOut from './components/Admin/Views/SoldProduct/Soldview'
+
+
 export default function App() {
   return (
     <div>
@@ -39,6 +43,8 @@ export default function App() {
     <Route path='/admin/view/starch' element={<StarchView/>}></Route>
     <Route path='/admin/view/sago' element={<SagoView/>}></Route>
     <Route path='/admin/view/thappi' element={<ThappiView/>}></Route>
+    <Route path='/admin/sale' element={<RemoveStock/>}></Route>
+    <Route path='/admin/view/soldout' element={<SoldOut/>}></Route>  
     </Routes>
     </div>
   )

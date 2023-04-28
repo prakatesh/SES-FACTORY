@@ -16,6 +16,8 @@ const {deleteSago}=require('../controllers/delete/ProductDelete/deleteSago')
 const {deleteStarch}=require('../controllers/delete/ProductDelete/deleteStarch')
 const {deleteThappi}=require('../controllers/delete/ProductDelete/deleteThappi')
 const {deleteFeedback}=require('../controllers/delete/deleteFeedback')
+const {removeStock}=require('../controllers/controllerRemove')
+const {fetchSoldOut}=require('../controllers/fetch/fetchSoldOut')
 
 router.post('/signup',signUp)
 router.post('/login',Login)
@@ -32,5 +34,7 @@ router.delete('/delete/sago/:id',deleteSago)
 router.delete('/delete/starch/:id',deleteStarch)
 router.delete('/delete/thappi/:id',deleteThappi)
 router.delete('/delete/feedback/:id',deleteFeedback)
+router.post('/clearstock',removeStock)
+router.get('/view/soldout',fetchSoldOut)
 
 module.exports=router

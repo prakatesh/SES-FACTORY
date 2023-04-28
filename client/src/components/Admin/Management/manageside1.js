@@ -17,6 +17,8 @@ import RateReviewIcon from '@mui/icons-material/RateReview';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FactoryIcon from '@mui/icons-material/Factory';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 
 
@@ -124,6 +126,12 @@ export default function Manageside1(props) {
           </ListItemIcon>
           <ListItemText style={{color:"white"}} >Add Purchase</ListItemText>
         </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/sale')}>
+          <ListItemIcon>
+          <ListItemIcon><ArrowCircleUpIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sale Product</ListItemText>
+        </ListItemButton>
         <ListItemButton onClick={()=>navigate('/admin/main')}>
           <ListItemIcon>
           <ListItemIcon><ManageAccountsIcon />  </ListItemIcon>
@@ -159,6 +167,12 @@ export default function Manageside1(props) {
                 <MenuItem onClick={()=>navigate('/admin/view/sago')} >Sago</MenuItem>
                 <MenuItem onClick={()=>navigate('/admin/view/thappi')} >Thappi</MenuItem>
           </Menu>
+        </ListItemButton>
+        <ListItemButton  onClick={()=>navigate('/admin/view/soldout')}>
+          <ListItemIcon>
+          <ListItemIcon><CurrencyRupeeIcon /> </ListItemIcon>
+          </ListItemIcon>
+          <ListItemText>Sold Out</ListItemText>
         </ListItemButton>
       </List>
       <Divider />
@@ -252,7 +266,7 @@ export default function Manageside1(props) {
                             <TextField id="outlined-basic" onChange={(e)=>setstarch(e.target.value)} value={starch} label="Starch" variant="outlined" />
                             <TextField id="outlined-basic" onChange={(e)=>setthappi(e.target.value)} value={thappi} label="Thappi" variant="outlined" />
                             <TextField id="outlined-basic" onChange={(e)=>setexpensive(e.target.value)} value={expensive} label="Expensive" variant="outlined" />
-                            <input onChange={(e)=>setdate(e.target.value)} value={date} type='date'/>
+                            <TextField id="outlined-basic" onChange={(e)=>setdate(e.target.value)} value={date}  type='date' variant="outlined" />
                             <Stack >
                                 <Button  onClick={submit} variant="contained">Next</Button>
                             </Stack>
