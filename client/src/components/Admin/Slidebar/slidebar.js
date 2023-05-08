@@ -234,7 +234,7 @@ export default function ResponsiveDrawer(props) {
             Purchase cost
             </div>
             <div style={{fontWeight:"500"}}>
-            {array[0]}
+            <span style={{color:"white",fontWeight:"bolder"}}>Rs:</span>{array[0]}
             </div>
           </div>
             </Col>
@@ -244,7 +244,7 @@ export default function ResponsiveDrawer(props) {
             Expense cost
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[1]}
+              <span style={{color:"white",fontWeight:"bolder"}}>Rs:</span>{array[1]}
             </div>
           </div>
             </Col>
@@ -254,7 +254,7 @@ export default function ResponsiveDrawer(props) {
             Total Cost
             </div>
             <div style={{fontWeight:"500"}}>
-            {array[2]}
+            <span style={{color:"white",fontWeight:"bolder"}}>Rs:</span>{array[2]}
             </div>
           </div>
             </Col>
@@ -268,7 +268,7 @@ export default function ResponsiveDrawer(props) {
             Total Tons
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[3]}
+              <span style={{color:"white",fontWeight:"bolder"}}>Tons:</span>{array[3]}
             </div>
           </div>
             </Col>
@@ -278,7 +278,7 @@ export default function ResponsiveDrawer(props) {
             Saled tons
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[4]}
+              <span style={{color:"white",fontWeight:"bolder"}}>Tons:</span>{array[4]}
             </div>
           </div>
             </Col>
@@ -288,7 +288,7 @@ export default function ResponsiveDrawer(props) {
             Instock tons
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[5]}
+            <span style={{color:"white",fontWeight:"bolder"}}>Tons:</span>{array[5]}
             </div>
           </div>
             </Col>
@@ -302,7 +302,7 @@ export default function ResponsiveDrawer(props) {
             Sold Out
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[6]}
+            <span style={{color:"blue",fontWeight:"bolder"}}>Rs:</span>{array[6]}
             </div>
           </div>
             </Col>
@@ -312,7 +312,7 @@ export default function ResponsiveDrawer(props) {
             Profit/Loss
             </div>
             <div style={{fontWeight:"500"}}>
-              {array[7]}
+            <span style={{color:"white",fontWeight:"bolder"}}>Rs:</span>{array[7]}
             </div>
           </div>
             </Col>
