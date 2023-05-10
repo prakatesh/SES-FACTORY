@@ -4,7 +4,7 @@ import Mainside from './MainSite'
 function MainData() {
     const [data,setdata]=useState([])
 useEffect(()=>{
-    fetch("http://localhost:8000/admin/data",{
+    fetch("https://ses-uvx3.onrender.com/admin/data",{
         method:"get"
     }).then((res)=>res.json())
     .then((data)=>{

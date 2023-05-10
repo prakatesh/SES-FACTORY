@@ -53,7 +53,7 @@ export default function Mainside(props) {
       setindex2(0)
         const data = {Date:e.target.value};
         console.log(data)
-        await fetch("http://localhost:8000/admin/edit",{
+        await fetch("https://ses-uvx3.onrender.com/admin/edit",{
           body : JSON.stringify(data),
           method:"post",
           headers: {
@@ -98,7 +98,7 @@ export default function Mainside(props) {
         Date:e.target.value
       };
       console.log(data)
-      await fetch("http://localhost:8000/admin/update",{
+      await fetch("https://ses-uvx3.onrender.com/admin/update",{
         body : JSON.stringify(data),
         method:"put",
         headers: {
@@ -106,7 +106,7 @@ export default function Mainside(props) {
         },
       }
       ).then(
-        await fetch("http://localhost:8000/admin/data",{
+        await fetch("https://ses-uvx3.onrender.com/admin/data",{
           method:"get",
           headers: {
             'Content-type': 'application/json; charset=UTF-8',
