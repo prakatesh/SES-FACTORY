@@ -14,7 +14,9 @@ app.use(bodyParser.json())
 
 app.use('/user',userRouter)
 app.use('/admin',adminRouter)
-
+app.get('/',(req,res)=>{
+    res.send("hello")
+})
 
 app.listen(8000,()=>{
     console.log("port is listening to 8000")

@@ -19,6 +19,8 @@ const {deleteFeedback}=require('../controllers/delete/deleteFeedback')
 const {removeStock}=require('../controllers/controllerRemove')
 const {fetchSoldOut}=require('../controllers/fetch/fetchSoldOut')
 
+
+
 router.post('/signup',signUp)
 router.post('/login',Login)
 router.get('/view/feedback',fetchFeedBack)
