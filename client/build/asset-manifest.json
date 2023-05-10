@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0db2a3d.css",
+    "main.js": "/static/js/main.3b7b6c06.js",
+    "static/media/form.jpg": "/static/media/form.e1fd305e49d274be17f7.jpg",
+    "static/media/back.jpg": "/static/media/back.8a73bd6f99e86a6bfbf3.jpg",
+    "static/media/wasteTapioca.jpg": "/static/media/wasteTapioca.a44776a3da85d45b1bef.jpg",
+    "static/media/Starch.jpg": "/static/media/Starch.b84572dd7dec223c3a74.jpg",
+    "static/media/sago.jpg": "/static/media/sago.e9dc963b137fc785e5bf.jpg",
+    "static/media/sag2.jpg": "/static/media/sag2.c3631e96943826000286.jpg",
+    "static/media/newsag.jpg": "/static/media/newsag.7434f9fed4f7a8f7ccd6.jpg",
+    "static/media/ceo.gif": "/static/media/ceo.74d51fa294bd4f042eb0.gif",
+    "static/media/icon.png": "/static/media/icon.ae93499c976bd56ff50c.png",
+    "static/media/mail.jpg": "/static/media/mail.aeb589e75850fde40f88.jpg",
+    "index.html": "/index.html",
+    "main.b0db2a3d.css.map": "/static/css/main.b0db2a3d.css.map",
+    "main.3b7b6c06.js.map": "/static/js/main.3b7b6c06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0db2a3d.css",
+    "static/js/main.3b7b6c06.js"
+  ]
+}
