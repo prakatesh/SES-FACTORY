@@ -27,7 +27,7 @@ function Product2Order() {
             comment:comment
         }
 
-        await fetch('http://localhost:8000/user/product/sago',{
+        await fetch('https://ses-uvx3.onrender.com/user/product/sago',{
             body:JSON.stringify(data),
             method:"post",
             headers: {

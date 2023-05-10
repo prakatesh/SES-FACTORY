@@ -36,7 +36,7 @@ export default function FeedBackSide(props) {
 
   const deleteFeedback = async (id) =>{
     alert(id)
-    const response=await fetch(`http://localhost:8000/admin/delete/feedback/${id}`,{
+    const response=await fetch(`https://ses-uvx3.onrender.com/admin/delete/feedback/${id}`,{
       method:"delete"
   })
   if(response.ok){

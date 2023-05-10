@@ -4,7 +4,7 @@ function ThappiView() {
     const [data,setdata]=useState([])
 
     const getdata = async () =>{
-        await   fetch("http://localhost:8000/admin/view/thappi",{
+        await   fetch("https://ses-uvx3.onrender.com/admin/view/thappi",{
             method:"get"
         }).then((res)=>res.json())
         .then((data)=>{

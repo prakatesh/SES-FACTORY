@@ -36,7 +36,7 @@ export default function ResponsiveDrawer(props) {
   const [array,setarry]=React.useState([])
 
   React.useEffect(()=>{
-    fetch("http://localhost:8000/admin/dashboard",{
+    fetch("https://ses-uvx3.onrender.com/admin/dashboard",{
         method:"get"
     }).then((res)=>res.json())
     .then((data)=>{
@@ -54,7 +54,7 @@ export default function ResponsiveDrawer(props) {
     try
     {
     const data={Date:searchdate}
-    await fetch("http://localhost:8000/admin/edit",{
+    await fetch("https://ses-uvx3.onrender.com/admin/edit",{
       body:JSON.stringify(data),
     method:"post",
     headers: {

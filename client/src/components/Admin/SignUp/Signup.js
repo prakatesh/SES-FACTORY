@@ -18,7 +18,7 @@ function Signup() {
       password:password
     }
 
-    await fetch("http://localhost:8000/admin/signup",{
+    await fetch("https://ses-uvx3.onrender.com/admin/signup",{
       body:JSON.stringify(data),
       method:"post",
       headers: {

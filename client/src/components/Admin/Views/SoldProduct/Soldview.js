@@ -4,7 +4,7 @@ function Soldview() {
     const [data,setdata]=useState([])
 
     const getdata = async () =>{
-        fetch("http://localhost:8000/admin/view/soldout",{
+        fetch("https://ses-uvx3.onrender.com/admin/view/soldout",{
             method:"get"
         }).then((res)=>res.json())
         .then((data)=>{

@@ -55,7 +55,7 @@ export default function RemoveStock(props) {
           total:total,
           date:date};
         console.log(data)
-        await fetch("http://localhost:8000/admin/clearstock",{
+        await fetch("https://ses-uvx3.onrender.com/admin/clearstock",{
           body : JSON.stringify(data),
           method : "post",
           headers: {

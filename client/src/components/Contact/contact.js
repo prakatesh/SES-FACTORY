@@ -27,7 +27,7 @@ export default function Contact() {
       console.log(name,email,state,city,number,comment)
         const data = {name: name, email:email,state:state,city:city,number:number,comment:comment};
         console.log(data)
-        await fetch("http://localhost:8000/user/contact",{
+        await fetch("https://ses-uvx3.onrender.com/user/contact",{
           body : JSON.stringify(data),
           method : "POST",
           headers: {

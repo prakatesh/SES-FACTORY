@@ -39,7 +39,7 @@ export default function Thappiside(props) {
 
   const deleteThappi = async (id) =>{
     alert(id)
-    const response=await fetch(`http://localhost:8000/admin/delete/thappi/${id}`,{
+    const response=await fetch(`https://ses-uvx3.onrender.com/admin/delete/thappi/${id}`,{
       method:"delete"
   })
   if(response.ok){

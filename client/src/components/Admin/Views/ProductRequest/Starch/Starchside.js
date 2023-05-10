@@ -36,7 +36,7 @@ export default function Starchside(props) {
 
   const deleteStarch = async (id) =>{
     alert(id)
-    const response=await fetch(`http://localhost:8000/admin/delete/starch/${id}`,{
+    const response=await fetch(`https://ses-uvx3.onrender.com/admin/delete/starch/${id}`,{
       method:"delete"
   })
   if(response.ok){

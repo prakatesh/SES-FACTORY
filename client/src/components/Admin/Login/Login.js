@@ -21,7 +21,7 @@ function Login() {
       password:password,
     }
 
-    await fetch("http://localhost:8000/admin/login",{
+    await fetch("https://ses-uvx3.onrender.com/admin/login",{
       body:JSON.stringify(data),
       method:"post",
       headers: {

@@ -27,7 +27,7 @@ function Product1Order() {
             comment:comment
         }
 
-        await fetch('http://localhost:8000/user/product/starch',{
+        await fetch('https://ses-uvx3.onrender.com/user/product/starch',{
             body:JSON.stringify(data),
             method:"post",
             headers: {

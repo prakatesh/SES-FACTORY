@@ -57,7 +57,7 @@ export default function Manageside1(props) {
           Expensive:expensive,
           Date:date};
         console.log(data)
-        await fetch("http://localhost:8000/admin/manage",{
+        await fetch("https://ses-uvx3.onrender.com/admin/manage",{
           body : JSON.stringify(data),
           method : "POST",
           headers: {

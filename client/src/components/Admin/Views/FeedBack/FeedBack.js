@@ -4,7 +4,7 @@ function FeedBack() {
     const [data,setdata]=useState([])
 
     const getdata = async () =>{
-        fetch("http://localhost:8000/admin/view/feedback",{
+        fetch("https://ses-uvx3.onrender.com/admin/view/feedback",{
             method:"get"
         }).then((res)=>res.json())
         .then((data)=>{
