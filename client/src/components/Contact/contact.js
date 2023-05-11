@@ -125,7 +125,7 @@ export default function Contact() {
               <label>Phone / Mobile </label><br/>
               <input onChange={(e)=>setnumber(e.target.value)} type='number' placeholder='Phone / Mobile'/><br/>
               <label>Enquiry Detail</label><br/>
-              <textarea onChange={(e)=>setcomment(e.target.value)} type="textarea" placeholder='Your Requirement' rows="4" cols="45"/><br/>
+              <textarea onChange={(e)=>setcomment(e.target.value)} type="textarea" placeholder='Your Requirement' rows="4"/><br/>
               <button className={style.button} onClick={submit} style={{verticalAlign:"middle"}}><span>Submit </span></button>
               <button className={style.button} style={{verticalAlign:"middle"}}><span>Cancel </span></button>
             </form>

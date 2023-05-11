@@ -78,7 +78,7 @@ function Product3Order() {
                                 <option  onChange={(e)=>setpurpose(e.target.value)} value="Raw-Material">Raw-Material</option>
                             </select><br/>
                             <label>Requirement Detail</label><br/>
-                            <textarea  onChange={(e)=>setcomment(e.target.value)}  type='textarea' cols="55"/><br/>
+                            <textarea  onChange={(e)=>setcomment(e.target.value)}  type='textarea'/><br/>
                             <button onClick={submit}>Send Enquiry</button>
                         </form>
                     </div>

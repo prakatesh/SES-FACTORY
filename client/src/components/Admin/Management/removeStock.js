@@ -196,7 +196,7 @@ export default function RemoveStock(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Today Update
+            Sale Today
           </Typography>
           
         </Toolbar>
@@ -241,8 +241,8 @@ export default function RemoveStock(props) {
         
         <Typography paragraph>
         <Row>
-        <Col md={3}></Col>
-        <Col md={7}>
+        <Col md={2}></Col>
+        <Col md={6}>
         <div style={{boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",textAlign:"center",paddingTop:'2vh',paddingBottom:'2vh'}}>
         <img src={form_img} alt='form_img' style={{width:"70%"}}/>
         <div ><br/>
@@ -257,12 +257,12 @@ export default function RemoveStock(props) {
     >
 <TextField id="outlined-basic" onChange={(e)=>setname(e.target.value)} value={name} label="Customer Name" variant="outlined" /><br/>
 
-<select className="form-select d-inline-flex p-2" required 
+<select style={{marginRight:"5vh"}} className="form-select d-inline-flex p-2" required 
                 onChange={(e) => {
                   setproduct(e.target.value);
                 }}
               >
-                <option value="product" disabled selected>
+                <option value="product"  disabled selected>
                   Product
                 </option>
                 <option value="Starch">Tapico Starch</option>

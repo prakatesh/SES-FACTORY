@@ -20,6 +20,8 @@ import FactoryIcon from "@mui/icons-material/Factory";
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -231,38 +233,32 @@ export default function Soldside(props) {
                 <Toolbar />
                 <Typography paragraph>
                     <div>
-                        <table>
-                            <tr>
-                                <th>Name</th>
-                                <th>Product </th>
-                                <th>Tons</th>
-                                <th>Amount Per Ton</th>
-                                <th>Total Amount</th>
-                                <th>Date</th>
-                                {/* <th>Delete</th> */}
-                            </tr>
+                        <Table style={{border:"1px solid black"}}> 
+                            <Thead style={{border:"1px solid black"}}>
+                            <Tr style={{border:"1px solid black"}}>
+                                <Th style={{border:"1px solid black"}}>Name</Th>
+                                <Th style={{border:"1px solid black"}}>Product </Th>
+                                <Th style={{border:"1px solid black"}}>Tons</Th>
+                                <Th style={{border:"1px solid black"}}>Amount Per Ton</Th>
+                                <Th style={{border:"1px solid black"}}>Total Amount</Th>
+                                <Th style={{border:"1px solid black"}}>Date</Th>
+                            </Tr>
+                            </Thead>
+                            <Tbody style={{border:"1px solid black"}}>
                             {props.data.map((i) => {
                                 return (
-                                    <tr>
-                                        <td>{i.name}</td>
-                                        <td>{i.product}</td>
-                                        <td>{i.tons}</td>
-                                        <td>{i.amount}</td>
-                                        <td>{i.total}</td>
-                                        <td>{i.date}</td>
-                                        {/* <td>
-                                            <Button
-                                                value={i.name}
-                                                onClick={() => deleteFeedback(i._id)}
-                                                variant="danger"
-                                            >
-                                                Delete
-                                            </Button>
-                                        </td> */}
-                                    </tr>
+                                    <Tr style={{border:"1px solid black"}}>
+                                        <Td style={{border:"1px solid black"}}>{i.name}</Td>
+                                        <Td style={{border:"1px solid black"}}>{i.product}</Td>
+                                        <Td style={{border:"1px solid black"}}>{i.tons}</Td>
+                                        <Td style={{border:"1px solid black"}}>{i.amount}</Td>
+                                        <Td style={{border:"1px solid black"}}>{i.total}</Td>
+                                        <Td style={{border:"1px solid black"}}>{i.date}</Td>
+                                    </Tr>
                                 );
                             })}
-                        </table>
+                            </Tbody>
+                        </Table>
                     </div>
                 </Typography>
                 <Typography paragraph></Typography>

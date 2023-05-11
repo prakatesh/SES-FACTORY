@@ -21,6 +21,9 @@ import FactoryIcon from '@mui/icons-material/Factory';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
+
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 // import style from '../../../../assets/Styles/FeedBack/feedback.module.css';
 
 import Menu from '@mui/material/Menu';
@@ -202,35 +205,36 @@ export default function Starchside(props) {
       >
         <Toolbar />
         <Typography paragraph>
-        <div> 
-            <table >
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Number</th>
-                <th>Quantity</th>
-                <th>Comment</th>
-                <th>Purpose</th>
-                <th>Message</th>
-                <th>Delete</th>
-              </tr>
+            <Table style={{border:"1px solid black"}}>
+              <Thead style={{border:"1px solid black"}}>
+              <Tr style={{border:"1px solid black"}}>
+                <Th style={{border:"1px solid black"}}>Name</Th>
+                <Th style={{border:"1px solid black"}}>Email</Th>
+                <Th style={{border:"1px solid black"}}>Number</Th>
+                <Th style={{border:"1px solid black"}}>Quantity</Th>
+                <Th style={{border:"1px solid black"}}>Comment</Th>
+                <Th style={{border:"1px solid black"}}>Purpose</Th>
+                <Th style={{border:"1px solid black"}}>Message</Th>
+                <Th style={{border:"1px solid black"}}>Delete</Th>
+              </Tr>
+              </Thead>
+              <Tbody style={{border:"1px solid black"}}>
               {props.data.map(i=>{
                 return(
-                  <tr>
-                    <td>{i.name}</td>
-                    <td>{i.email}</td>
-                    <td>{i.number}</td>
-                    <td>{i.Quantity}</td>
-                    <td>{i.Purpose}</td>
-                    <td>{i.comment}</td>
-                    <td><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></td>
-                    <td><Button value={i.name} onClick={() => deleteStarch(i._id)} variant="danger">Delete</Button></td>
-                  </tr>
+                  <Tr style={{border:"1px solid black"}}>
+                    <Td style={{border:"1px solid black"}}>{i.name}</Td>
+                    <Td style={{border:"1px solid black"}}>{i.email}</Td>
+                    <Td style={{border:"1px solid black"}}>{i.number}</Td>
+                    <Td style={{border:"1px solid black"}}>{i.Quantity}</Td>
+                    <Td style={{border:"1px solid black"}}>{i.Purpose}</Td>
+                    <Td style={{border:"1px solid black"}}>{i.comment}</Td>
+                    <Td style={{border:"1px solid black"}}><Button variant="success"><a style={{textDecoration:"none",color:"white"}} href={"mailto:" + i.email+"?Subject=Hello%20"+i.name}>Message</a></Button></Td>
+                    <Td style={{border:"1px solid black"}}><Button value={i.name} onClick={() => deleteStarch(i._id)} variant="danger">Delete</Button></Td>
+                  </Tr>
                 )
               })}
-            </table>
-            
-        </div>
+              </Tbody>
+            </Table>
         </Typography>
         <Typography paragraph>
           

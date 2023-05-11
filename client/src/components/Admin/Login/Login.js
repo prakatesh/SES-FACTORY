@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { NavLink,useNavigate } from "react-router-dom";
 import styles from "../../../assets/Styles/Login/login.module.css";
 import Navb from "../../Navbar/navbar";
+import { TextField } from "@mui/material";
+import { Col, Row } from "react-bootstrap";
 function Login() {
   const navigate=useNavigate()
   const ref1=useRef();
@@ -44,17 +46,25 @@ function Login() {
     <div>
       <Navb/>
       <Container>
+        <Row>
+          <Col md={2}></Col>
+          <Col md={8}>
         <div className={styles.login}>
           <div className={styles.card}>
             <h6>Welcome !!</h6>
-            <label>Email</label>
+
+            <TextField id="outlined-basic" style={{backgroundColor:"white",marginBottom:"1vh"}} ref={ref1} onChange={(e)=>setemail(e.target.value)} value={email} label="Email" variant="outlined" /><br/>
+            <TextField id="outlined-basic" style={{backgroundColor:"white",marginBottom:"1vh"}} onChange={(e)=>setpassword(e.target.value)} value={password} type="password" label="Password" variant="outlined" />
+          
+
+            {/* <label>Email</label>
             <br />
             <input ref={ref1} type="text" onChange={(e)=>setemail(e.target.value)} />
             <br />
             <label>Password</label>
             <br />
             <input type="password" onChange={(e)=>setpassword(e.target.value)}/>
-            <br />
+            <br /> */}
             <div className={styles.link}>
               <NavLink>Forget Password?</NavLink>
               <br />
@@ -68,6 +78,9 @@ function Login() {
             </div>
           </div>
         </div>
+        </Col>
+        <Col md={2}></Col>
+        </Row>
       </Container>
     </div>
   );

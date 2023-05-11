@@ -15,10 +15,10 @@ function ProductList({data}) {
             <Container>
             <div className={style.section} style={{backgroundColor:"white"}} data-aos="flip-right" data-aos-duration="2000">
               <Row>
-                <Col md={5}>
-                  <img src={data.pic} alt="f" />
+                <Col md={6}>
+                  <img src={data.pic} width="100%" alt="f" />
                 </Col>
-                <Col md={7}>
+                <Col md={6}>
                   <div className={style.textsection}>
                     <h2>{data.topic}</h2>
                     <p>{data.p1}</p>
@@ -33,9 +33,9 @@ function ProductList({data}) {
           </Container>
           :
           <Container>
-          <div className={style.section} style={{backgroundColor:"white"}} data-aos="flip-left" data-aos-duration="2000">
+          <div className={style.section}  style={{backgroundColor:"white"}} data-aos="flip-left" data-aos-duration="2000">
             <Row>
-              <Col md={7}>
+              <Col md={6}>
                 <div className={style.textsection}>
                   <h2>{data.topic}</h2>
                   <p>{data.p1}</p>
@@ -45,8 +45,8 @@ function ProductList({data}) {
                   </div>
                 </div>
               </Col>
-              <Col md={5}>
-                <img src={data.pic} alt="f" />
+              <Col md={6}>
+                <img width="100%"src={data.pic} alt="f" />
               </Col>
             </Row>
           </div>

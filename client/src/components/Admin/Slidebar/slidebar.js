@@ -21,6 +21,11 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
 
+
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+
+
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -325,9 +330,46 @@ export default function ResponsiveDrawer(props) {
           <Button onClick={search}>Search</Button>
           </>:
             <>
-            <h1>Edit</h1>
-            <table>
-                  <tr>
+            <h1>Views</h1>
+
+
+            <Table style={{border:"1px solid black"}}>
+      <Thead style={{border:"1px solid black"}}>
+        <Tr style={{border:"1px solid black"}}>
+                    <Th style={{border:"1px solid black"}}>TodayPurchase</Th>
+                    <Th style={{border:"1px solid black"}}>Bundle</Th>
+                    <Th style={{border:"1px solid black"}}>PointRate</Th>
+                    <Th style={{border:"1px solid black"}}>Starch</Th>
+                    <Th style={{border:"1px solid black"}}>Thappi</Th>
+                    <Th style={{border:"1px solid black"}}>Expensive</Th>
+                    <Th style={{border:"1px solid black"}}>starchStock</Th>
+                    <Th style={{border:"1px solid black"}}>ThappiStock</Th>
+                    <Th style={{border:"1px solid black"}}>totalAmount</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+      {data1.map(i=>{
+                    
+                    return(
+                    <><Tr>
+                <Td style={{border:"1px solid black"}}>{i.TodayPurchase}</Td>
+                <Td style={{border:"1px solid black"}}>{i.Bundle}</Td>
+                <Td style={{border:"1px solid black"}}>{i.PointRate}</Td>
+                <Td style={{border:"1px solid black"}}>{i.Starch}</Td>
+                <Td style={{border:"1px solid black"}}>{i.Thappi}</Td>
+                <Td style={{border:"1px solid black"}}>{i.Expensive}</Td>
+                <Td style={{border:"1px solid black"}}>{i.starchStock}</Td>
+                <Td style={{border:"1px solid black"}}>{i.thappiStock}</Td>
+                <Td style={{border:"1px solid black"}}>{i.totalAmount}</Td>
+                </Tr>
+                      </>)
+        })}
+      </Tbody>
+    </Table>
+
+            {/* <Table style={{ backgroundColor: "white" }} striped bordered hover>
+              <thead>
+              <tr>
                     <th>TodayPurchase</th>
                     <th>Bundle</th>
                     <th>PointRate</th>
@@ -338,6 +380,8 @@ export default function ResponsiveDrawer(props) {
                     <th>thappiStock</th>
                     <th>totalAmount</th>
                   </tr>
+              </thead>
+            <tbody>
                   {data1.map(i=>{
                     
                     return(
@@ -353,7 +397,8 @@ export default function ResponsiveDrawer(props) {
                 <td>{i.totalAmount}</td>
                       </>)
                   })}
-            </table>
+            </tbody>
+          </Table> */}
            <Button onClick={()=>setindex(0)} variant="success">Okay</Button>
             </>
           }
