@@ -17,7 +17,6 @@ exports.contact=async(req,res)=>
     try{
         contactModel.create([data])
         res.json("done")
-        console.log("data inserted")
     }
     catch(e)
     {

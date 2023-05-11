@@ -4,7 +4,6 @@ const manageModel =require('../../model/manage')
 
 exports.manage=async(req,res)=>
 {
-    console.log(req.body);
     const {TodayPurchase,Bundle,PointRate,Starch,Thappi,Date,Expensive}=req.body
     const data={
         TodayPurchase:TodayPurchase,
@@ -21,7 +20,6 @@ exports.manage=async(req,res)=>
     try{
         await manageModel.create([data])
         res.json("done")
-        console.log("Admin data inserted for manage")
     }
     catch(e)
     {

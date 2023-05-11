@@ -32,7 +32,6 @@ exports.updatefetch=async(req,res)=>
 {
     try{
         const {TodayPurchase,Bundle,PointRate,Starch,Thappi,Expensive,starchStock,thappiStock,totalAmount,Date}=req.body
-        console.log(TodayPurchase,Bundle,PointRate,Starch,Thappi,Expensive,starchStock,thappiStock,totalAmount,Date)
         const updatedata=await manageModel.findOneAndUpdate({Date:Date},{
             TodayPurchase:TodayPurchase,
             Bundle:Bundle,
@@ -44,8 +43,6 @@ exports.updatefetch=async(req,res)=>
             thappiStock:thappiStock,
             totalAmount:totalAmount
         })
-        console.log("update data")
-        console.log(updatedata)
         res.send({status:200,data:updatedata})
     }
     catch(e)

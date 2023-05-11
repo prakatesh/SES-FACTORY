@@ -2,7 +2,6 @@ const starchOrder=require('../model/starchOrder')
 
 exports.starch=async(req,res)=>
 {
-    console.log(req.body)
     const {name,email,number,Quantity,Purpose,comment}=req.body
     const data={
         name:name,
@@ -16,7 +15,6 @@ exports.starch=async(req,res)=>
     try{
         starchOrder.insertMany([data])
         res.json("done")
-        console.log("data inserted for starch request")
     }
     catch(e)
     {
