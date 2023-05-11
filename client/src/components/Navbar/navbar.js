@@ -1,39 +1,54 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import icon from '../../assets/Images/Icon/icon.png'
-import style from '../../assets/Styles/Navbar/navbar.module.css'
-import { NavLink } from 'react-router-dom';
-function Navb() {
-  return (
-    <Navbar className={style.navbar}  expand="lg">
-      <Container fluid>
-        <Nav.Link href='/'><img style={{width:"50%"}} src={icon} alt="icon"/></Nav.Link>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-          </Nav>
-          <Nav
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <div className={style.links} >
-            <NavLink to="/"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-home" /></span>Home</NavLink>
-            <NavLink to="/about"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-user" /></span>About</NavLink>
-            <NavLink to="/flipbook"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-book" /></span>Flipbook</NavLink>
-            <NavLink to="/product"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-box-open" /></span>Product</NavLink>
-            <NavLink to="/contact"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-phone-volume"/></span>Contact us</NavLink>
-            <NavLink to="/admin/login"><span style={{color:"black",paddingRight:"1vh"}}><i className="fa-solid fa-lock" /></span>Admin</NavLink>
-            </div>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
 
-export default Navb;
+import icon from '../../assets/Images/Icon/icon.png'
+
+
+import React from 'react';
+import {Collapse, Navbar,  NavbarToggler,  NavbarBrand,  Nav,  NavItem,NavLink} from 'reactstrap';
+
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Navbar style={{backgroundColor:"rgb(47, 88, 117)"}}  light expand="md">
+          <NavbarBrand href="/"><img style={{width:"50%"}} src={icon} alt="icon"/></NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-home" /></span>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/about" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-user" /></span>About</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/flipbook" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-book" /></span>Flipbook</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/product" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-box-open" /></span>Product</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contact" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-phone-volume"/></span>Contact us</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/admin/login" style={{paddingLeft:"5vh",color:"white"}}><span style={{color:"white",paddingRight:"1vh"}}><i className="fa-solid fa-lock" /></span>Admin</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}

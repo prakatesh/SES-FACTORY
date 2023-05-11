@@ -30,6 +30,7 @@
     "react-scroll": "^1.8.9",
     "react-spinners": "^0.13.8",
     "react-super-responsive-table": "^5.2.1",
+    "reactstrap": "^9.1.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
