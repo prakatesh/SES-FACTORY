@@ -1,2 +1,2 @@
 # SES-FACTORY
-<a href="home">j</a>
+<a href="https://srielumalaiyan.netlify.app/">srielumalaiyan.netlify.app</a>
