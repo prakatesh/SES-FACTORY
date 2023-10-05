@@ -19,6 +19,7 @@ exports.Purchase=async (req,res)=>
         totalAmount+=i.totalAmount
     }
 
+    
     totalCost=Purchase+Expense
     for(j of sold){
         totalSoldTons=totalSoldTons+parseInt(j.tons),
